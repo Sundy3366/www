@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!--@author:xuefeng.kang -->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title>爱学</title>
+		<link rel="stylesheet" href="../../../css/teacher/grade.css"/>
+		<link rel="stylesheet" href="../../../css/common/public.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/teacher/join_grade.css"/>
+	</head>
+	<body class="f36_2">
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span class="title">
+				<div class="f0">
+					<span class="f36_2">新建班级</span>
+				</div>
+			</span>
+			<span onclick="createClass();" class="right f0 minWidth66">
+				<span class="headerOkBtn">完成</span>
+			</span>
+		</header>
+		<article class="editPosition">
+			<div class="jpcc_up_div">
+				<div>
+					<span class="f32_2 colorf1 jpc_code_font jp_width2">
+						<span>
+							年
+						</span>
+						<span class="jp_margin_left1">
+							级
+						</span>
+					</span>
+					<div class="jpc_code_input_div jp_width1" onclick="showSelectGrade();"><input id="gradeName" readonly="readonly" class="jpc_code_input f32_2" type="text"/></div>
+				</div>
+				<div>
+					<span class="f32_2 colorf1 jpc_code_font jp_width2">班级名称</span>
+					<div class="jpc_code_input_div jp_width1"><input id="className" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5\\]/g,'')" class="jpc_code_input f32_2" type="text" maxlength="8"/></div>
+				</div>
+				<div id="schoolId" hidden="hidden"></div>
+			</div>
+			<div class="jpc_code_gap"></div>
+			<div class="editPositionHeader">
+				<span class="line"></span>
+				<span class="headerContainer">
+					<span class="subjectIcon"></span>
+					<span class="headerText">任教学科</span>
+				</span>
+				<span class="line"></span>
+			</div>
+			<div class="subjectList">
+				<ul>
+					<li>
+						<span data="1">语文</span>
+					</li>
+					<li>
+						<span data="2">数学</span>
+					</li>
+					<li>
+						<span data="3">英语</span>
+					</li>
+					<li>
+						<span data="4">物理</span>
+					</li>
+					<li>
+						<span data="5">化学</span>
+					</li>
+					<li>
+						<span data="6">历史</span>
+					</li>
+					<li>
+						<span data="7">生物</span>
+					</li>
+					<li>
+						<span data="8">地理</span>
+					</li>
+					<li>
+						<span data="9">政治</span>
+					</li>
+					<li>
+						<span data="10">科学</span>
+					</li>
+					<li>
+						<span data="11">其他</span>
+					</li>
+				</ul>
+			</div>
+			<div class="jpcc_note_div">
+				<img class="jpcc_note_img" src="../../../img/teacher/grade/as_head_teacher_identification@2x.png"/>
+				<span class="f26_2 colorl2">您将担任本班班主任</span>
+			</div>
+		</article>
+		<!--
+	        	作者：libaoan
+	        	时间：2016-01-30
+	        	描述：选择年级
+        -->
+		<div class="jpcc_sel_div jpcc_display_no">
+			<div class="bgo40"></div>
+			<div class="jpcc_sel_content">
+				<div class="jpcc_sel_head_div">
+					<div id="hign" class="jpcc_sel_head_font f32_2 colorf2 jpcc_sel_border" onclick="highClass(this);">初高中年级</div>
+					<div id="primary" class="jpcc_sel_head_font f32_2 colorf2" onclick="primaryClass(this);">小学年级</div>
+				</div>
+				<div id="allContent">
+					<div id="hignContent" class="jpcc_display">
+						<div data="6" class="jpcc_sel_class1 f32_2">初一</div>
+						<div data="5" class="jpcc_sel_class2 f32_2">初二</div>
+						<div data="4" class="jpcc_sel_class3 f32_2">初三</div>
+						<div data="3" class="jpcc_sel_class1 f32_2">高一</div>
+						<div data="2" class="jpcc_sel_class2 f32_2">高二</div>
+						<div data="1" class="jpcc_sel_class3 f32_2">高三</div>
+					</div>
+					<div id="primaryContent" class="jpcc_display_no">
+						<div data="12" class="jpcc_sel_class1 f32_2">小一</div>
+						<div data="11" class="jpcc_sel_class2 f32_2">小二</div>
+						<div data="10" class="jpcc_sel_class3 f32_2">小三</div>
+						<div data="9" class="jpcc_sel_class1 f32_2">小四</div>
+						<div data="8" class="jpcc_sel_class2 f32_2">小五</div>
+						<div data="7" class="jpcc_sel_class3 f32_2">小六</div>
+					</div>
+				</div>
+				<div class="jpcl_sel_footer pub_margin_top20">
+					<div class="jpcc_sel_cancel f32_2 colorf2 jpcl_sel_border_right" onclick="javascript:$('.jpcc_sel_div').hide();">取消</div>
+					<div class="jpcc_sel_cancel f32_2 colorf6" onclick="gradeSure();">确认</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/grade.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/join_grade.js" ></script>
+		<script>
+			$(function(){
+				editTeacherPostionSelectSubjectListen();
+				//获取传过来的参数
+				var strParam = getQueryStringFromUrl();
+				//获取学校id,把学校id保存到div元素中
+				document.getElementById("schoolId").innerHTML = strParam.schoolId;
+				$("#hignContent > div,#primaryContent > div").on("click",function(){
+				   $(this).addClass("jpcc_sel_selected").siblings().removeClass("jpcc_sel_selected");
+				   $(this).parent().siblings().children().removeClass("jpcc_sel_selected");
+				});
+			});
+			function gradeSure(){
+				$('.jpcc_sel_div').hide();
+				document.getElementById("gradeName").value = $("#allContent .jpcc_sel_selected").text();
+			}
+		</script>
+	</body>
+</html>

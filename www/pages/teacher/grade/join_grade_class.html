@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../../css/common/public.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/teacher/grade.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/teacher/join_grade.css"/>
+	</head>
+	<body>
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span class="title">
+				<span class="f0">
+					<span class="f36_2">选班级</span>
+				</span>
+			</span>
+			<span class="right f0">
+				<span></span>
+			</span>
+		</header>
+		<div id="schoolId" hidden="hidden"></div>
+		<div id="classId" hidden="hidden"></div>
+		<div class="jg_li bgcFFFFFF">
+			<img src="../../../img/teacher/grade/content_find_calss_by_school@2x.png" class="jg_img1"/>
+			<p id="schName" class="f32_2 colorf1 jg_p jp_padding_left1"></p>
+		</div>
+		<div id="gradeList">
+			<!--<div class="jpcl_level bgcF3F6F8 f28_2 colorf2">
+				高一
+			</div>
+			<ul class="jp_ul">
+				<li class="colorf1 f32_2 jp_height2">
+					<span>1班</span>
+					<span class="f28_2 colorf3 jpcl_add jpcl_span1">已加入</span>
+				</li>
+				<li class="colorf1 f32_2 jp_height2">
+					<span>2班</span>
+					<span class="f28_2 colorc2 jpcl_add jpcl_span2" onclick="showSelectSubject()">
+						<span>+</span>
+						<span>加入</span>
+					</span>
+				</li>
+				<li class="colorf1 f32_2 jp_height2">
+					<span>3班</span>
+					<span class="f28_2 colorc2 jpcl_add jpcl_span2">
+						<span>+</span>
+						<span>加入</span>
+					</span>
+				</li>
+			</ul>
+			<div class="jpcl_level bgcF3F6F8 f28_2 colorf2">
+				高二
+			</div>
+			<ul class="jp_ul">
+				<li class="colorf1 f32_2 jp_height2">
+					<span>1班</span>
+					<span class="f28_2 colorf3 jpcl_add jpcl_span1">已加入</span>
+				</li>
+				<li class="colorf1 f32_2 jp_height2">
+					<span>2班</span>
+					<span class="f28_2 colorc2 jpcl_add jpcl_span2">
+						<span>+</span>
+						<span>加入</span>
+					</span>
+				</li>
+				<li class="colorf1 f32_2 jp_height2">
+					<span>3班</span>
+					<span class="f28_2 colorc2 jpcl_add jpcl_span2">
+						<span>+</span>
+						<span>加入</span>
+					</span>
+				</li>
+			</ul>-->
+		</div>
+		<!--
+	        	作者：xuefeng.kang
+	        	时间：2016-01-29
+	        	描述：点击加入按钮弹出的浮层
+        -->
+		<div class="jpcl_select_div">
+			<div class="bgo40"></div>
+			<div class="jpcl_select_content editPosition">
+				<div class="editPositionHeader">
+					<span class="headerContainer">
+						<span class="headerText">选择科目</span>
+					</span>
+				</div>
+				<div class="subjectList">
+					<ul>
+						<li>
+							<span data="1">语文</span>
+						</li>
+						<li>
+							<span data="2">数学</span>
+						</li>
+						<li>
+							<span data="3">英语</span>
+						</li>
+						<li>
+							<span data="4">物理</span>
+						</li>
+						<li>
+							<span data="5">化学</span>
+						</li>
+						<li>
+							<span data="6">历史</span>
+						</li>
+						<li>
+							<span data="7">生物</span>
+						</li>
+						<li>
+							<span data="8">地理</span>
+						</li>
+						<li>
+							<span data="9">政治</span>
+						</li>
+						<li>
+							<span data="10">科学</span>
+						</li>
+						<li>
+							<span data="11">其他</span>
+						</li>
+					</ul>
+				</div>
+				<div class="jpcl_sel_footer">
+                    <div class="jpcl_sel_cancel f32_2 colorf6 jpcl_sel_border_right" onclick="javascript:$('.jpcl_select_div').hide();$.each($('.subjectList ul li').find('.selected'),function(i,v){
+                        $(v).removeClass('selected');
+                        });">取消</div>
+					    <div class="jpcl_sel_cancel f32_2 colorf6" onclick="joinClassFromSchool();">确认</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/grade.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/join_grade.js" ></script>
+		<script>
+		    //hadJoin值为0，代表是从选择学校界面来的请求,如果是从选学校来的请求且没有加入班级则返回的时候需要跳转两层
+			var hadJoin = "";
+			//该字段标识是否加入过班级
+			var backNum = "";
+			$(function(){
+				editTeacherPostionSelectSubjectListen();
+				//alert(getQueryStringFromUrl());
+				var strParam = getQueryStringFromUrl();
+				var schoolId = strParam.schoolId;
+				var schoolName = decodeURIComponent(strParam.schoolName);
+				//flag值为0，代表是从选择学校界面来的请求,如果是从选学校来的请求则返回的时候需要跳转两层
+				hadJoin = strParam.flag;
+				document.getElementById("schoolId").innerHTML = schoolId;
+				document.getElementById("schName").innerHTML = schoolName;
+				findClassList(schoolId);
+			});
+		</script>
+	</body>
+</html>

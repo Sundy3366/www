@@ -1,0 +1,239 @@
+<!--
+	作者：wdjx_123@sina.cn
+	时间：2016-01-28
+	描述：班级详情
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title>爱学</title>
+		<link rel="stylesheet" href="../../../css/teacher/grade.css"/>
+		<link rel="stylesheet" href="../../../css/common/public.css"/>
+		<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../../js/common/touch-0.2.14.min.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/grade.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				//初始化班级详情信息
+				initDetailInfo();
+			});
+		</script>
+	</head>
+	<body class="colorf1">
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span id="changeClassTitle" class="title">
+				<div class="f0">
+					<span name="headerTitle" class="f36_2">&nbsp;</span>
+					<!--点击切换班级时使用 arrowUp-->
+					<span class="arrowDown" style="display: none;"></span>
+				</div>
+			</span>
+			<span class="right f0 minWidth66">
+				<span class="invitationCodeSp" style="display: none;" onclick="showGradeInvitationCode()"></span>
+				<span class="groupManageSp" onclick="gotoGroupManager()"></span>
+			</span>
+		</header>
+		<!--
+        	作者：wdjx_123@sina.cn
+        	时间：2016-01-23
+        	描述：班级切换弹出层
+        -->
+		<div id="changeClassDiv" class="changeClassesSec">
+			<div class="bgo40"></div>
+			<ul>
+				<!--
+				<li>
+					<span class='space'></span>
+					<span class="f36_2 text">高一(1)班</span>
+				</li>
+				<li>
+				-->
+					<!--
+                    	作者：wdjx_123@sina.cn
+                    	时间：2016-01-23
+                    	描述：选中时添加hover,未选时为space
+                    -->
+				<!--
+					<span class='space hover'></span>
+					<span class="f36_2 text">高一(2)班</span>
+				</li>
+				<li>
+					<span class='space'></span>
+					<span class="f36_2 text">高一(4)班</span>
+				</li>
+				-->
+			</ul>
+		</div>
+		<article class="classDetialArt">
+			<div id="changeDetailTab" class="tabDiv f30_2">
+				<ul>
+					<li class="selected" data="gradeMemberContent">班级成员</li>
+					<li data="studentParentsContent">学生家长</li>
+				</ul>
+			</div>
+			<div class="h10"></div>
+			<div class="content f30_2">
+				<!--
+                	作者：wdjx_123@sina.cn
+                	时间：2016-01-25
+                	描述：班级成员
+                -->
+				<section id="gradeMemberContent">
+					<section class="classMemberSe">
+						<header>老师<span name="teacherMemberCountSpan"><!--(3)--> &nbsp;</span></header>
+						<section class="memberList teacher">
+							<ul>
+								<!--
+
+								<li>
+									<img src="../../../img/teacher/grade/public-head_img_160@2x.png"/>
+									<div class="listText">
+										<span class="name">林大喜</span>
+										<span class="subject">(数学)</span>
+										<span class="tag">班主任</span>
+									</div>
+								</li>	
+								<li>
+									<img src="../../../img/teacher/grade/public-head_img_160@2x.png"/>
+									<div class="listText">
+										<span class="name">林大喜</span>
+										<span class="subject">(语文<span>&nbsp;</span>外语)</span>
+										<span class="rightOp">
+											<span class="edit" onclick="javascript:document.location.href='edit_teacher_position.html';">编辑</span>
+											<span class="del"  onclick="delMember()">删除</span>
+										</span>
+									</div>
+								</li>
+								<li>
+									<img src="../../../img/teacher/grade/public-head_img_160@2x.png"/>
+									<div class="listText">
+										<span class="name">林大喜</span>
+										<span class="subject">(未开通)</span>
+									</div>
+								</li>
+                                -->
+							</ul>
+						</section>
+					</section>
+					<div class="h10"></div>
+					<section class="classMemberSe" style="display: none;">
+						<header>学生<span name="studentMemberCountSpan"><!--(45)-->&nbsp;</span></header>
+						<section class="memberList student">
+							<ul>
+								<!--
+								<li>
+									<img src="../../../img/teacher/grade/public-head_img_160@2x.png"/>
+									<div class="listText">
+										<span class="name">林大喜</span>
+									</div>
+								</li>	
+								<li>
+									<img src="../../../img/teacher/grade/public-head_img_160@2x.png"/>
+									<div class="listText">
+										<span class="name">林大喜</span>
+									</div>
+								</li>
+								<li>
+									<img src="../../../img/teacher/grade/public-head_img_160@2x.png"/>
+									<div class="listText">
+										<span class="name">林大喜</span>
+									</div>
+								</li>
+								-->
+							</ul>
+						</section>
+					</section>
+				</section>
+				<!--
+                	作者：wdjx_123@sina.cn
+                	时间：2016-01-25
+                	描述：学生家长
+                -->
+				<section id="studentParentsContent" style="display: none;">
+					<section class="classMemberSe">
+						<!--
+						<section class="memberList studentParents">
+							<div class="studentParentsZW"></div>
+						</section>
+						-->
+						<!--
+                        	作者：wdjx_123@sina.cn
+                        	时间：2016-01-27
+                        	描述：若无数据则在以上section中的添加<div class="studentParentsZW"></div>,
+                        		   反之在section中添加ul 
+                        -->
+						<section class="memberList studentParents">
+							<div class="studentParentsZW"></div>
+								<!--
+								<ul>
+								<li>
+									<img class="" src="../../../img/teacher/grade/public-head_img_160@2x.png"/>
+									<div class="listText">
+										<span>林大喜家长</span>
+									</div>
+								</li>
+								<li>
+									<img src="../../../img/teacher/grade/public-head_img_160@2x.png"/>
+									<div class="listText">
+										<span>林大喜家长</span>
+										<span class="rightOp">
+											<span class="edit">编辑</span>
+											<span class="del" onclick="delMember()">删除</span>
+										</span>
+									</div>
+								</li>
+								<li>
+									<img src="../../../img/teacher/grade/public-head_img_160@2x.png"/>
+									<div class="listText">
+										<span>林大喜</span>
+									</div>
+								</li>
+								</ul>
+								-->
+							</ul>
+						</section>
+					</section>
+				</section>
+			</div>
+		</article>
+		<!--
+        	作者：wdjx_123@sina.cn
+        	时间：2016-01-25
+        	描述：班级邀请码弹出层
+        -->
+		<div class="gradeInvitationCodeDiv">
+			<div class="bgo40"></div>
+			<div class="content">
+				<header class="f30_2 colorf1">班级邀请码</header>
+				<div class="invitationCodeDiv">&nbsp;</div>
+				<div class="okBtn" onclick="javascript:$('.gradeInvitationCodeDiv').hide();">确定</div>
+			</div>
+		</div>
+		<!--
+        	作者：wdjx_123@sina.cn
+        	时间：2016-01-25
+        	描述：删除老师/学生弹出层
+        -->
+		<div class="delMemberDiv">
+			<div class="bgo40"></div>
+			<div class="content">
+				<div class="info">
+					<header>您将删除该成员，确定是否继续？</header>
+					<div class="options">
+						<!--<img src="../../../img/teacher/grade/content_btn_selected@2x.png" class="selected"/>-->
+						<span name="enjoinSelect" class="selected"></span>
+						<span class="f32_2">禁止再次加入</span>
+					</div>
+				</div>
+				<div class="operate">
+					<span name="submit">确定</span>
+					<span onclick="delMemberDialogClose()">取消</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title>爱学</title>
+		<link rel="stylesheet" type="text/css" href="../../../css/common/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/teacher/course.css" />
+		<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/courses.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				//初始化教材列表
+				initBookLists();
+			});
+		</script>
+	</head>
+
+	<body class="bodyBg-f2f6f9">
+		<!--
+			彩色背景调用 bodyBg-f2f6f9
+			白色背景调用 bodyBg-fff
+		-->
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span id="changeClassTitle" class="title">
+				<span class="f0">
+					<div class="f0">
+						<span class="f36_2">选教材</span>
+			</div>
+			</span>
+			</span>
+		</header>
+		<article class="selected_textbooks">
+			<ul name="textBookUl" class="textbooks_list">
+				<!--
+				<li>
+					<div class="list_con">
+						人教版
+						<span class="btn_close"></span>
+				-->		
+						<!--
+							展开时调用 btn_open
+							收起时调用 btn_close
+						-->
+				<!--
+					</div>
+				</li>
+				<li>
+					<div class="list_con">
+						人教版<span class="btn_close"></span>
+					</div>
+				</li>
+				<li>
+					<div class="list_con">
+						人教版<span class="btn_close"></span>
+					</div>
+				</li>
+				<li>
+					<div class="list_con">
+						人教版<span class="btn_close"></span>
+					</div>
+				</li>
+				<li>
+					<div class="list_con">
+						人教版<span class="btn_open"></span>
+					</div>
+					<ol class="open_con">
+						<li>必修1</li>
+						<li>必修2</li>
+						<li>必修3</li>
+					</ol>
+				</li>
+                -->
+			</ul>
+		</article>
+	</body>
+</html>

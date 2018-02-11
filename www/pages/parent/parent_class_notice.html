@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/common/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/classNotice/class_notice.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common/idangerous.swiper.css" />
+		<link rel="stylesheet" href="../../css/teacher/grade.css" />
+	</head>
+
+	<body class="bodyBg-f2f6f9">
+		<!--
+			白色背景调用 bodyBg-fff
+			彩色背景调用 bodyBg-f2f6f9
+		-->
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span id="changeClassTitle" class="title">
+				<span class="f0">
+					<div class="f0">
+						<span class="f36_2">班级通知</span>
+					</div>
+				</span>
+			</span>
+		</header>
+		<div class="topFlushLoading"><span class="loadingIcon"></span>下拉刷新</div>
+		<article class="class_notice" >
+			<div id="classNoticeList" class="swiper-container">
+				<div class="swiper-wrapper class_notice_list">
+		  			<!--<div class="swiper-slide">
+		  				<time>05-27</time>
+						<div class="con">
+							<p></p>
+							<img src="../../img/teacher/course/content_course_card_default@2x.png"/>
+							<span></span>
+						</div>
+		  			</div>-->
+				</div>
+			</div>
+			<!--<ul class="class_notice_list" id="classNoticeList">
+			</ul>-->
+		</article>
+		<div class="bl_img_div">
+			<img class="bl_img" src="../../img/teacher/teacherMain/nothing_in_the_world@2x.png"/>
+		</div>
+		<!--status为true时上拉加载-->
+		<div class="bottomMoreLoading" onclick="loadingMore4LessonList()">查看更多</div>
+		<script type="text/javascript" src="../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../js/common/idangerous.swiper.min.js"></script>
+		<script type="text/javascript" src="../../js/common/touch-0.2.14.min.js" ></script>
+		<script type="text/javascript" src="../../js/common/emoji/emoji.js" ></script>
+		<script type="text/javascript" src="../../js/parent/parent_main.js" ></script>
+		<script>
+			var currPageNum = 0;//当前pageNum
+			var touchType ;//0:上拉(加载)或1:下拉(刷新)
+			var currMySwiper;//当前swiper对象
+			$(function(){
+				//请求参数
+//				var jid = getLocalStorageItem(webStorageVars[2]);
+//				var schoolId = getLocalStorageItem(webStorageVars[5]);
+//				var uType = getLocalStorageItem(webStorageVars[7]);
+//				var pageNum = 1;
+//				var data="jid="+jid+"&schoolId="+schoolId+"&pageNum="+pageNum+"&type="+uType;
+//				getSignCode(data,Config.getActivityListUrl(),"classNoticeList_");
+				getParentClassNotice();
+			})
+		</script>
+	</body>
+
+</html>

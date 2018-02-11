@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title>爱学</title>
+		<link rel="stylesheet" type="text/css" href="../../../css/common/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/teacher/course.css" />
+		<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/courses.js" ></script>
+        <script type="text/javascript" src="../../../js/common/touch-0.2.14.min.js" ></script>
+		<script type="text/javascript" >
+			$(function(){
+				initPhotoSubjectPage();
+			});
+		</script>
+	</head>
+
+	<body class="bodyBg-f2f6f9">
+		<!--
+		白色背景调用 bodyBg-fff	
+		彩色背景调用 bodyBg-f2f6f9
+		-->
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span id="changeClassTitle" class="title">
+				<span class="f0">
+					<div class="f0">
+						<span class="f36_2">拍照出题</span>
+					</div>
+				</span>
+			</span>
+			<span class="right f0">
+				<p onclick="photoSubjectPublishSubmit()" style="color: #fff; font-size: 16px; margin-top: -9px;">提交</p>
+			</span>
+		</header>
+		<article class="take_out_subject mb10Pix" style="margin-top: 44px;">
+			<section class="subject_con">
+				<h2>题目</h2>
+				<span id="addQuestionPicSpan" class="add_subject_operation tm_display_no" onclick="getPicPopShow(0)"></span>
+				<!--
+				<div class="subject_poto">
+					<img src="../../../img/parent/parent_content_associate_children_bg@2x.png"/>
+					<a href="" class="del_icon"></a>
+				</div>
+				 -->
+			</section>
+			
+			<div class="analysis_icon">
+				<a href="javascript:;" id="jiexiBtn" onclick="getPicPopShow(1)"></a>
+			</div>
+			<section class="subject_con mb15Pix">
+				<h2 id="answerPicSpan" class="tm_display_no">解析</h2>
+				<!--<div class="subject_poto">
+					<img src="../../../img/parent/parent_content_associate_children_bg@2x.png"/>
+					<a href="" class="del_icon"></a>
+				</div>-->
+			</section>
+		</article>
+		<article class="take_out_subject">
+			<section class="subject_con">
+				<h2>难易度</h2>
+				<ul id="difficultyChangeUl" class="select_facility_value">
+					<li data="1">基础</li>
+					<li data="2" class="hig">中档</li>
+					<li data="3" >难</li>					
+				</ul>
+			</section>
+			<section class="subject_con">
+				<h2>题型</h2>
+				<ul id="quetionTypeChangeUl" class="select_questions">
+					<!--class="hig"-->
+					<!--
+					<li >文学类文本阅读</li>
+					<li>微作文</li>
+					<li>单选提</li>	
+					<li>多选题</li>	-->
+				</ul>
+			</section>
+			<section id="selectAndAnswerCon"  style="display: none;" class="subject_con">
+				<h3>设置选项与答案</h3>
+				<dl class="select_set">
+					<div class="abcdefg">
+						<dt id="singleSelectDt" style="display: none;">
+							<p><span class="circle" data="a">A</span></p>
+							<p><span class="circle" data="b">B</span></p>
+							<p><span class="circle" data="c">C</span></p>
+							<p><span class="circle" data="d">D</span></p>
+							<p><span class="circle" data="e" style="display: none;">E</span></p>
+							<p><span class="circle" data="f" style="display: none;">F</span></p>
+							<p><span class="circle" data="g" style="display: none;">G</span></p>
+							<p><span class="circle" data="h" style="display: none;">H</span></p>
+						</dt>
+						<dt id="multiSelectDt"  style="display: none;">
+							<p><span data="a">A</span></p>
+							<p><span data="b">B</span></p>
+							<p><span data="c">C</span></p>
+							<p><span data="d">D</span></p>
+							<p><span data="e" style="display: none;">E</span></p>
+							<p><span data="f" style="display: none;">F</span></p>
+							<p><span data="g" style="display: none;">G</span></p>
+							<p><span data="h" style="display: none;">H</span></p>
+						</dt>
+					</div>
+					<dd id="btnNumBtn" style="display: none;">
+						<span index="1" class="del_desible"></span>
+						<!-- 不可操作时调用 del_desible-->
+						<span index="2" class=""></span>
+						<!-- 不可操作时调用 add_desible-->
+					</dd>
+				</dl>
+			</section>
+			<div id="getPicPopDiv" onclick="getPicPopClose()" class="popup_windows" style="display: none;">
+				<div class="camera_con">
+					<p class="camera">
+						<a href="javascript:;" onclick="takeAPic4TakePhotoSubject(0)"></a>
+						<span>拍照</span>
+					</p>
+					<p class="poto">
+						<a href="javascript:;" onclick="takeAPic4TakePhotoSubject(1)"></a>
+						<span>相册</span>
+					</p>
+				</div>
+			</div>
+		</article>
+	</body>
+</html>

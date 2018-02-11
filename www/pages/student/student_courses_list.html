@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title>爱学</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/teacher/course.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/student/student.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common/idangerous.swiper.css" />
+		<script type="text/javascript" src="../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../js/common/idangerous.swiper.min.js"></script> 
+		<script type="text/javascript" src="../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../js/common/touch-0.2.14.min.js" ></script>
+		<script type="text/javascript" src="../../js/student/student_course.js" ></script>
+		<script type="text/javascript">
+			var currPageNum = 0;
+			var touchType ;//0:上拉(加载)或1:下拉(刷新)
+			var currMySwiper;//当前swiper对象
+			$(function(){
+				//初始化课程列表
+				initMyCourses();
+			});
+		</script>
+	</head>
+
+	<body class="bodyBg-fff">
+		<!--彩色背景调用 bodyBg-f2f6f9-->
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span id="changeClassTitle" class="title">
+				<span class="f0">
+					<div class="f0">
+						<span class="f36_2">&nbsp;</span>
+						<!-- 
+							收起时调用  arrowDown
+							展开时调用  arrowUp  
+						-->
+					</div>
+				</span>
+			</span>
+			<span class="right f0">
+				<span class="navBtnMore" onclick="textbookChangePopToggle()"></span>
+			</span>
+		</header>
+		<!--更多 小弹窗-->
+		<div name="textbookChangePop" style="display: none;">
+			<div class="bgo0" style="z-index: 2;" onclick="textbookChangePopToggle()"></div>
+			<ul class="more_small_popup_windows" style="position:absolute;">
+				<li><p class="integration"><a href="javascript:;" onclick="gotoSubjectPoint()">学科积分</a></p></li>
+				<li><p class="switching"><a href="javascript:;" onclick="gotoSelectTextBook()">切换教材</a></p></li>
+			</ul>
+		</div>
+		<div class="topFlushLoading"><span class="loadingIcon"></span>下拉刷新</div>
+		<div class="teacherBoxDiv ">
+			<div class="swiper-container pt20Pix" style="height: calc(100% - 20px);">
+		  		<article id="lessonList" class="swiper-wrapper"><!--pt20Pix-->
+			  			<!--<div class="swiper-slide">-->
+			  				<!--<span><a href="javascript:;" onclick="gotoCreateLesson()"> <img src="../../img/teacher/course/content_course_card_default@2x.png" /></a><div name="redTip" style="top: 5px;width: 10px;height: 10px;left: 26px;" class="tm_menu_red_tip"></div></span>-->
+			  			<!--</div>-->
+				</article>
+			</div>
+		</div>
+		<!--status为true时上拉加载-->
+		<div class="bottomMoreLoading" onclick="loadingMore4LessonList()">查看更多</div>
+				<article class="teacherBox pl4Per pr4Per pt20Pix tm_display_no">
+					<div class="zwBox tm_display_no">
+						<img src="../../img/teacher/course/zw4@2x.png" class="teacherListNullBg pt30Pix" />
+					</div>
+					<div id="placeholder" class="tm_no_grade pub_margin_top100 tm_display_no">
+						<div>
+							<img class="tm_no_grade_img1" src="../../img/teacher/course/zw6@.png"/>
+						</div>
+						<div class="pub_margin_top30 cursor_pointer" onclick="gotoSelectTextBook()">
+							<img class="tm_width2" src="../../img/teacher/course/nav_btn_select_subject@2x.png"/>
+						</div>
+					</div>
+				</article>
+		
+		<div class="delMemberDiv">
+			<div class="bgo40"></div>
+			<div class="content">
+				<div class="info">
+					<header>你将删除本课及课中的所有任务，确定继续？</header>
+					<div class="options">
+					</div>
+				</div>
+				<div class="operate">
+					<span name="submit" onclick="delLessonSubmit()">确定</span>
+					<span onclick="delPopForCreateLessonClose()">取消</span>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+
+</html>

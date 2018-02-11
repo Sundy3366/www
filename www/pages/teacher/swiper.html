@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>jQuery模拟原生态App上拉刷新下拉加载效果代码</title>
+<link rel="stylesheet" href="../../css/common/idangerous.swiper.css">
+<meta name="viewport" content="width=device-width">
+<style>
+html {
+	height: 100%;
+}
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	line-height: 1.5;
+	position: relative;
+	height: 100%;
+	background: #333;
+	box-shadow: 0px 0px 100px #000 inset;
+}
+.preloader {
+	position: absolute;
+	left: 0;
+	top: -100px;
+	z-index: 0;
+	color: #fff;
+	text-align: center;
+	line-height: 100px;
+	height: 100px;
+	width: 100%;
+	opacity: 0;
+	font-size: 24px;
+	-webkit-transition: 300ms;
+	-moz-transition: 300ms;
+	-ms-transition: 300ms;
+	-o-transition: 300ms;
+	transition: 300ms;
+	background: rgba(0,0,0,0.1);
+}
+.preloader.visible {
+	top: 0;
+	opacity: 1;
+}
+.bottomloader {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 0;
+	color: #fff;
+	text-align: center;
+	line-height: 100px;
+	font-size: 24px;
+	height:100px;
+	width: 100%;
+	opacity: 0;
+	/*
+	-webkit-transition: 300ms;
+	-moz-transition: 300ms;
+	-ms-transition: 300ms;
+	-o-transition: 300ms;
+	transition: 300ms;
+	*/
+	background: rgba(0,0,0,0.1);
+}
+.bottomloader.visible {
+	opacity: 1;
+	-webkit-transition: 300ms;
+	-moz-transition: 300ms;
+	-ms-transition: 300ms;
+	-o-transition: 300ms;
+	transition: 300ms;
+}
+.swiper-container {
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	text-align: center;
+	position: relative;
+	z-index: 10;
+}
+.red-slide {
+	background: #ca4040;
+}
+.blue-slide {
+	background: #4390ee;
+}
+.orange-slide {
+	background: #ff8604;
+}
+.green-slide {
+	background: #49a430;
+}
+.pink-slide {
+	background: #973e76;
+}
+.swiper-slide {
+	height: 100px;
+	width: 100%;
+	line-height: 100px;
+	opacity: 0.2;
+	-webkit-transition: 300ms;
+	-moz-transition: 300ms;
+	-ms-transition: 300ms;
+	-o-transition: 300ms;
+	transition: 300ms;
+}
+.swiper-slide-visible {
+	opacity: 1;
+}
+.swiper-slide .title {
+	font-style: italic;
+	font-size: 32px;
+}
+</style>
+</head>
+<body>
+<div class="preloader"> Loading... </div>
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide red-slide">
+      <div class="title">Slide 1</div>
+    </div>
+    <div class="swiper-slide blue-slide">
+      <div class="title">Slide 2</div>
+    </div>
+	<!--
+    <div class="swiper-slide orange-slide">
+      <div class="title">Slide 3</div>
+    </div>
+    <div class="swiper-slide green-slide">
+      <div class="title">Slide 4</div>
+    </div>
+    <div class="swiper-slide pink-slide">
+      <div class="title">Slide 5</div>
+    </div>
+    <div class="swiper-slide red-slide">
+      <div class="title">Slide 6</div>
+    </div>
+    <div class="swiper-slide blue-slide">
+      <div class="title">Slide 7</div>
+    </div>
+    <div class="swiper-slide orange-slide">
+      <div class="title">Slide 8</div>
+    </div>
+    <div class="swiper-slide pink-slide">
+      <div class="title">Slide 9</div>
+    </div>
+    <div class="swiper-slide green-slide">
+      <div class="title">Slide 10</div>
+    </div>
+	-->
+  </div>
+</div>
+<div class="bottomloader"> Bottom Loading... </div>
+<script src="../../js/common/jquery-1.9.1.min.js"></script> 
+<script src="../../js/common/idangerous.swiper.min.js"></script> 
+<script>
+/*
+  var holdPosition = 0;
+  var mySwiper = new Swiper('.swiper-container',{
+    slidesPerView:'auto',
+    mode:'vertical',
+    watchActiveIndex: true,
+    onTouchStart: function() {
+      holdPosition = 0;
+    },
+    onResistanceBefore: function(s, pos){
+      holdPosition = pos;
+	  console.log(pos);
+    },
+	onResistanceAfter:function(s,pos){
+	  holdPosition = parseInt("-"+pos);
+	  console.log(holdPosition);
+	},
+    onTouchEnd: function(){
+      if (holdPosition>100) {
+			mySwiper.setWrapperTranslate(0,100,0)
+			mySwiper.params.onlyExternal=true
+			$('.preloader').addClass('visible');
+			loadNewSlides();
+      }else if (holdPosition!=0 && holdPosition<-100) {
+			var swiper_wrapper = $(".swiper-wrapper");
+			mySwiper.params.onlyExternal=true;
+			$('.bottomloader').addClass('visible');
+			swiper_wrapper.css("bottom",$('.bottomloader').height());
+			setTimeout(function(){
+				 var swiper_wrapperHeight = swiper_wrapper.height();
+				 var colors = ['blue','red','green','orange','pink'];
+				 var color = colors[Math.floor(Math.random()*colors.length)];
+				 mySwiper.appendSlide('<div class="title">www.internetke.com '+(slideNumber++)+'</div>', 'swiper-slide '+color+'-slide');
+				 if( swiper_wrapperHeight <= $(document.body).height())
+					//垂直移动到页面顶端
+					mySwiper.setWrapperTranslate(0,0,0);
+				 else
+					//垂直移动到页面底端
+					mySwiper.setWrapperTranslate(0, ($(document.body).height() - $(".swiper-wrapper").height()) ,0);
+				 mySwiper.params.onlyExternal=false;
+				 setTimeout(function(){
+					mySwiper.updateActiveSlide();
+				 },100);
+				 //Hide loader
+				 $('.bottomloader').removeClass('visible');
+				 swiper_wrapper.css("bottom",0);
+			},1000);
+	  }
+    }
+  });
+  */
+  var slideNumber = 0;
+  function loadNewSlides(mySwiper){
+    setTimeout(function(){
+      //Prepend new slide
+      var colors = ['blue','red','green','orange','pink'];
+      var color = colors[Math.floor(Math.random()*colors.length)];
+      mySwiper.prependSlide('<div class="title">www.internetke.com '+slideNumber+'</div>', 'swiper-slide '+color+'-slide');
+      //Release interactions and set wrapper
+      mySwiper.setWrapperTranslate(0,0,0)
+      mySwiper.params.onlyExternal=false;
+      //Update active slide
+      mySwiper.updateActiveSlide(0)
+      //Hide loader
+      $('.preloader').removeClass('visible');
+    },1000)
+    slideNumber++;
+  }
+
+  //封装 上拉下拉刷新方法
+  /**
+   * container 下需要有一级结构
+   * @description
+   *    文档结构
+   *    <div class="preloader"> Loading... </div>
+		<div class="swiper-container">
+		  <div class="swiper-wrapper">
+		    <div class="swiper-slide red-slide">
+		      <div class="title">Slide 1</div>
+		    </div>
+		   </div>
+		</div>
+	  <div class="bottomloader"> Bottom Loading... </div>
+   * 
+   * @param {String} containerSelector	容器选择器,.#...
+   * @param {String} preLoaderSelector  下拉加载选择器 ,.#...
+   * @param {Function} preLoaderClassHandleFn 下拉加载样式处理
+   * @param {Function} preLoaderHandleFn 下拉加载处理,处理成功后需处理 下拉的样式
+   * 					  mySwiper.prependSlide('<div class="title">www.internetke.com '+slideNumber+'</div>', 'swiper-slide '+color+'-slide');
+   * 					  mySwiper.setWrapperTranslate(0,0,0)
+					      mySwiper.params.onlyExternal=false;
+					      //Update active slide
+					      mySwiper.updateActiveSlide(0)
+					      //Hide loader
+					      $('.preloader').removeClass('visible');
+   * @param {String} bottomLoaderSelector 上拉加载处理
+   * @param {Function} bottomLoaderClassHandleFn 上拉加载样式处理
+   * @param {Function} bottomLoaderHandleFn 上拉加载处理,处理成功后需处理 上拉的样式
+   * 					mySwiper.appendSlide('<div class="title">www.internetke.com '+(slideNumber++)+'</div>', 'swiper-slide '+color+'-slide');
+						 if( swiper_wrapperHeight <= $(document.body).height())
+							//垂直移动到页面顶端
+							mySwiper.setWrapperTranslate(0,0,0);
+						 else
+							//垂直移动到页面底端
+							mySwiper.setWrapperTranslate(0, ($(document.body).height() - $(".swiper-wrapper").height()) ,0);
+						 mySwiper.params.onlyExternal=false;
+						 setTimeout(function(){
+							mySwiper.updateActiveSlide();
+						 },100);
+						 //Hide loader
+						 $('.bottomloader').removeClass('visible');
+						 swiper_wrapper.css("bottom",0);
+   */
+  function upAndDownSwiperWrapper(containerSelector,
+  			preLoaderSelector,preLoaderClassHandleFn,preLoaderHandleFn,
+  			bottomLoaderSelector,bottomLoaderClassHandleFn,bottomLoaderHandleFn){
+	 	var holdPosition = 0;
+	  	var mySwiper = new Swiper(containerSelector,{
+		    slidesPerView:'auto',
+		    mode:'vertical',
+		    watchActiveIndex: true,
+		    onTouchStart: function() {
+		      holdPosition = 0;
+		    },
+		    onResistanceBefore: function(s, pos){
+		      holdPosition = pos;
+		    },
+			onResistanceAfter:function(s,pos){
+			  holdPosition = parseInt("-"+pos);
+			},
+		    onTouchEnd: function(){
+		      if (holdPosition>100) {
+					mySwiper.setWrapperTranslate(0,100,0);
+					mySwiper.params.onlyExternal=true;
+					preLoaderClassHandleFn(mySwiper);
+					preLoaderHandleFn(mySwiper);
+					/**
+					 * setTimeout(function(){
+				      //Prepend new slide
+				      var colors = ['blue','red','green','orange','pink'];
+				      var color = colors[Math.floor(Math.random()*colors.length)];
+				      mySwiper.prependSlide('<div class="title">www.internetke.com '+slideNumber+'</div>', 'swiper-slide '+color+'-slide');
+				      //Release interactions and set wrapper
+				      mySwiper.setWrapperTranslate(0,0,0)
+				      mySwiper.params.onlyExternal=false;
+				      //Update active slide
+				      mySwiper.updateActiveSlide(0)
+				      //Hide loader
+				      $('.preloader').removeClass('visible');
+				    },1000);
+					 */
+		      }else if (holdPosition!=0 && holdPosition<-100) {
+					var swiper_wrapper = $(containerSelector).children().first();
+					mySwiper.params.onlyExternal=true;
+					bottomLoaderClassHandleFn(mySwiper);
+					swiper_wrapper.css("bottom",$(bottomLoaderSelector).height());
+					bottomLoaderHandleFn(mySwiper);
+					/*
+					setTimeout(function(){
+						 if( swiper_wrapperHeight <= $(document.body).height())
+							//垂直移动到页面顶端
+							mySwiper.setWrapperTranslate(0,0,0);
+						 else
+							//垂直移动到页面底端
+							mySwiper.setWrapperTranslate(0, ($(document.body).height() - $(".swiper-wrapper").height()) ,0);
+						 mySwiper.params.onlyExternal=false;
+						 setTimeout(function(){
+							mySwiper.updateActiveSlide();
+						 },100);
+						 //Hide loader
+						 swiper_wrapper.css("bottom",0);
+					},1000);
+					*/
+			  }
+		    }
+		  });
+  }
+  $(function(){
+  	upAndDownSwiperWrapper('.swiper-container',
+  			'.preloader',function(mySwiper){
+  				$('.preloader').addClass('visible');
+  			},function(mySwiper){
+  				loadNewSlides(mySwiper);
+  			},
+  			'.bottomloader',function(mySwiper){
+  				$('.bottomloader').addClass('visible');
+  			},function(mySwiper){
+  				var swiper_wrapper = $(".swiper-wrapper");
+				mySwiper.params.onlyExternal=true;
+				$('.bottomloader').addClass('visible');
+				swiper_wrapper.css("bottom",$('.bottomloader').height());
+				setTimeout(function(){
+					 var swiper_wrapperHeight = swiper_wrapper.height();
+					 var colors = ['blue','red','green','orange','pink'];
+					 var color = colors[Math.floor(Math.random()*colors.length)];
+					 mySwiper.appendSlide('<div class="title">www.internetke.com '+(slideNumber++)+'</div>', 'swiper-slide '+color+'-slide');
+					 if( swiper_wrapperHeight <= $(document.body).height())
+						//垂直移动到页面顶端
+						mySwiper.setWrapperTranslate(0,0,0);
+					 else
+						//垂直移动到页面底端
+						mySwiper.setWrapperTranslate(0, ($(document.body).height() - $(".swiper-wrapper").height()) ,0);
+					 mySwiper.params.onlyExternal=false;
+					 setTimeout(function(){
+						mySwiper.updateActiveSlide();
+					 },100);
+					 //Hide loader
+					 $('.bottomloader').removeClass('visible');
+					 swiper_wrapper.css("bottom",0);
+				},1000);
+  			});
+  	
+  });
+  </script>
+</body>
+</html>

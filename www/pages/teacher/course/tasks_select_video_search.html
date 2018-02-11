@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title>爱学</title>
+		<link rel="stylesheet" type="text/css" href="../../../css/common/public.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/teacher/join_grade.css"/>
+	   	<link rel="stylesheet" type="text/css" href="../../../css/teacher/course.css" />
+	   	<link rel="stylesheet" type="text/css" href="../../../css/common/idangerous.swiper.css" />
+	   	<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../../js/common/idangerous.swiper.min.js"></script>
+		<script type="text/javascript" src="../../../js/common/touch-0.2.14.min.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/courses.js" ></script>
+		<script type="text/javascript" >
+			var currPageNum = 1;//当前搜索页号
+			var touchType ;//0:上拉(加载)或1:下拉(刷新)
+			var currMySwiper;//当前swiper对象
+		</script>
+	</head>
+	<body class="bgcF3F6F8">
+		<header class="titleBarHeader" style="display: block;">
+			<span class="returnBackSpan" onclick="javascript:goBackNow(-1,false)"></span>
+			<span class="title" style="width: 70%;">
+				<span class="f0">
+					<span class="f36_2">
+						<div>
+							<div class="jps_input_div">
+								<input id="seachKey" class="jps_input input" required style="text-align: left;" type="search" placeholder="  搜索"/>
+								<a class="clear" ontouchstart="$('#seachKey').val('');"></a>
+							</div>
+						</div>
+					</span>
+				</span>
+			</span>
+			<span class="right f0">
+				<span class="textBtn" onclick="searchTaskVideoList(false,true)">搜索</span>
+			</span>
+		</header>
+		<!--<div class="topFlushLoading" style="margin-top: 50px;"><span class="loadingIcon"></span>下拉刷新</div>-->
+		<article class="tasks_select_video" style="height: calc(100% - 44px);">
+			<div id="viewListUl" class="swiper-container video_list">
+		  		<div class="swiper-wrapper">
+		  			<!--
+		  			<div class="swiper-slide">
+		  				<div class="divLi">
+			  				<div class="video_con">
+								<img src="../../../img/teacher/course/content_course_card_default@2x.png"  style="width: 100%; height: auto;"/>
+							</div>
+							<p>课程视频名称简介（2016.02.20最新版）</p>
+		  				</div>
+		  				<div class="divLi">
+			  				<div class="video_con">
+								<img src="../../../img/teacher/course/content_course_card_default@2x.png"  style="width: 100%; height: auto;"/>
+							</div>
+							<p>课程视频名称简介（2016.02.20最新版）</p>
+						</div>
+		  			</div>-->
+				</div>
+			</div>
+			<!--
+			<ul id="viewListUl_" class="video_list">
+				<li>
+					<div class="video_con">
+						<img src="../../../img/teacher/course/content_course_card_default@2x.png"  style="width: 100%; height: auto;"/>
+					</div>
+					<p>课程视频名称简介（2016.02.20最新版）</p>
+				</li>
+			</ul>-->
+		</article>
+		<!--status为true时上拉加载-->
+		<div class="bottomMoreLoading" onclick="loadingMore4VideoList()">查看更多</div>
+	</body>
+</html>

@@ -1,0 +1,174 @@
+<!--
+	作者：wdjx_123@sina.cn
+	时间：2016-01-28
+	描述：小组详情
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title>爱学</title>
+		<link rel="stylesheet" href="../../../css/teacher/grade.css"/>
+		<link rel="stylesheet" href="../../../css/common/public.css"/>
+		<script type="text/javascript" >
+			var webRoot = document.location.href.split("pages/teacher/grade/group_detail.html")[0];
+		</script>
+		<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../../js/common/touch-0.2.14.min.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/grade.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				//初始化小组详情
+				initGroupDetailInfo();
+			});
+		</script>
+		
+	</head>
+	<body class="colorf1">
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span id="changeClassTitle" class="title">
+				<div class="f0">
+					<span class="f36_2">&nbsp;</span>
+				</div>
+			</span>
+			<span class="right f0" id="titleRightSpan">
+				<span name="changeGroup4groupDetailBtn" style="display: none;" class="textBtn" onclick="changeGroup4groupDetailShow()">调组</span>
+				<span name="changeGroup4groupDetailCancelBtn" class="textBtn" style="display: none;" onclick="changeGroup4ReturnGroupDetailShow()">取消</span>
+			</span>
+		</header>
+		<article class="groupDetail">
+			<div class="h100Per">
+				<div class="ulParent">
+					<!--
+					<div class="noGrpoupMemberZW">
+					-->
+						<!--
+                        	作者：wdjx_123@sina.cn
+                        	时间：2016-01-30
+                        	描述：占位图
+                        -->
+						
+					<!--</div>-->
+					
+					<!--<ul style="display: none;">
+						<li>-->
+							<!--<span name="selectSpan" class="notSelected"></span>-->
+							<!--<img src="../../../img/teacher/grade/public-head_img_160@2x.png"/>
+							<div class="listText">
+								<span class="name">林大喜</span>
+							</div>
+						</li>
+						<li>
+							<img src="../../../img/teacher/grade/public-head_img_160@2x.png"/>
+							<div class="listText">
+								<span class="name">林大喜2号</span>
+								<span class="rightOp">
+									<span>&nbsp;</span>
+									<span class="del"  onclick="delMember()">删除</span>
+								</span>
+							</div>
+						</li>
+						<li>
+							<img src="../../../img/teacher/grade/public-head_img_160@2x.png"/>
+							<div class="listText">
+								<span class="name">林大喜3号</span>
+							</div>
+						</li>
+						<li>
+							<img src="../../../img/teacher/grade/public-head_img_160@2x.png"/>
+							<div class="listText">
+								<span class="name">林大喜3号</span>
+							</div>
+						</li>
+						<li>
+							<img src="../../../img/teacher/grade/public-head_img_160@2x.png"/>
+							<div class="listText">
+								<span class="name">林大喜3号</span>
+							</div>
+						</li>
+						<li>
+							<img src="../../../img/teacher/grade/public-head_img_160@2x.png"/>
+							<div class="listText">
+								<span class="name">林大喜6号</span>
+							</div>
+						</li>
+						<li>
+							<img src="../../../img/teacher/grade/public-head_img_160@2x.png"/>
+							<div class="listText">
+								<span class="name">林大喜7号</span>
+							</div>
+						</li>
+						<li>
+							<img src="../../../img/teacher/grade/public-head_img_160@2x.png"/>
+							<div class="listText">
+								<span class="name">林大喜n号</span>
+							</div>
+						</li>
+					</ul>-->
+				</div>
+				<!--
+                	作者：wdjx_123@sina.cn
+                	时间：2016-01-29
+                	描述：调至按钮
+                -->
+				<div class="changeOtherGroupBtn" onclick="initGroupList4SwitchGroup()">
+					<div class="h0_5"></div>
+					<div class="btn">调至</div>
+				</div>
+			</div>
+		</article>
+		<!--
+        	作者：wdjx_123@sina.cn
+        	时间：2016-01-29
+        	描述：调组div
+        -->
+		<div class="groupList4ChangeGroupDiv">
+			<div class="bgo40"></div>
+			<div class="content">
+				<header class="title">
+					调至
+				</header>
+				<div class="groupList">
+					<ul>
+						<!--
+						<li class="selected">哈佛大学冒菜粉组<span class="selected"></span></li>
+						<li>清华名族风组</li>
+						<li>网校教研院组</li>
+						<li>网校教研院组B</li>
+						<li>网校教研院组C</li>
+						-->
+					</ul>
+				</div>
+				<div class="operate">
+					<span class="cancel" onclick="javascript:$('.groupList4ChangeGroupDiv').hide();">取&nbsp;消</span>
+					<span class="ok" onclick="switchGroupSubmit()">确&nbsp;定</span>
+				</div>
+			</div>
+		</div>
+		<!--
+        	作者：wdjx_123@sina.cn
+        	时间：2016-01-25
+        	描述：删除老师/学生弹出层
+        -->
+		<div class="delMemberDiv">
+			<div class="bgo40"></div>
+			<div class="content">
+				<div class="info">
+					<header>您将删除该成员，确定是否继续？</header>
+					<div class="options">
+						<!--<img src="../../../img/teacher/grade/content_btn_selected@2x.png" class="selected"/>-->
+						<span class="selected"></span>
+						<span class="f32_2">禁止再次加入</span>
+					</div>
+				</div>
+				<div class="operate">
+					<span>确定</span>
+					<span onclick="javascript:$('.delMemberDiv').hide();">取消</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

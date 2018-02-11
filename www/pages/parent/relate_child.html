@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--@author:xuefeng.kang -->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title>爱学</title>
+		<link rel="stylesheet" href="../../css/common/public.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/teacher/join_grade.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/parent/parent.css"/>
+	</head>
+	<body class="bgcF3F6F8">
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span class="title">
+				<div class="f0">
+					<span class="f36_2">关联孩子</span>
+				</div>
+			</span>
+			<span onclick="relateChildCheck();" class="right f0 minWidth66">
+				<span class="headerOkBtn">确定</span>
+			</span>
+		</header>
+		<article>
+			<div class="rc_div">
+				<div class="rc_invite">输入家长邀请码</div>
+				<div class="rc_input_div"><input id="inviteCode" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5\\]/g,'')" class="rc_input" type="text" maxlength="8"/></div>
+				<div class="rc_note colorf3">提示：登录孩子的账号，在［我的］页面就可以看到家长邀请码</div>
+			</div>
+		</article>
+		<div id="checkSure" class="jpcc_sel_div jpcc_display_no">
+			<div class="bgo40"></div>
+			<div class="jpcc_sel_content" style="margin-top: 50%;">
+				<div class="jpcc_sel_head_div" style="border: none;">
+					<div id="hign" class="jpcc_sel_head_font f32_2 colorf2">再此确认绑定</div>
+				</div>
+				<div class="jpcl_sel_footer">
+					<div class="jpcc_sel_cancel f32_2 colorf6" onclick="checkSure();">确认</div>
+				</div>
+			</div>
+		</div>
+		<div id="relateSucc" class="jpcc_sel_div jpcc_display_no">
+			<div class="bgo40"></div>
+			<div class="jpcc_sel_content" style="margin-top: 50%;">
+				<div class="jpcc_sel_head_div" style="border: none;">
+					<div id="hign" class="jpcc_sel_head_font f32_2 colorf2">关联成功</div>
+				</div>
+				<div class="jpcl_sel_footer">
+					<div class="jpcc_sel_cancel f32_2 colorf6" onclick="relateSuccReturn();">确认</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../js/parent/parent_main.js" ></script>
+		<script>
+			
+		</script>
+	</body>
+</html>

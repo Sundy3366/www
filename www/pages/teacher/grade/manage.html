@@ -1,0 +1,65 @@
+<!--
+	作者：wdjx_123@sina.cn
+	时间：2016-01-28
+	描述：班级管理
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title>班级管理</title>
+		<link rel="stylesheet" href="../../../css/teacher/grade.css"/>
+		<link rel="stylesheet" href="../../../css/common/public.css"/>
+		<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/grade.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/join_grade.js" ></script>
+		<script type="text/javascript" >
+			$(function(){
+				//加载班级列表,并校验是否可以创建班级
+				getClassList();
+				goBack();//返回刷新
+				//处理加入班级,创建班级
+
+				handleByConfigFrom(function(){},function () {
+					$("#addCreateClassUl").hide();
+				});
+
+			});
+		</script>
+	</head>
+	<body class="bgcF3F6F8 f36_2">
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span class="title">
+				<span class="f0">
+					<span class="f36_2">班级管理</span>
+				</span>
+			</span>
+			<!--
+            	作者：wdjx_123@sina.cn
+            	时间：2016-01-27
+            	描述：头 右侧按钮位置
+            -->
+			<span class="right f0">
+				<span></span>
+			</span>
+		</header>
+		<article class="bgcFFFFFF">
+			<ul name="classList4gradeManage" class="classesUl">
+				<!--
+				<a href="detail.html"><li><span></span>初二2zj班</li></a>
+				<a href="detail.html"><li><span></span>初二2zj班</li></a>
+				-->
+			</ul>
+			<div class="h10"></div>
+			<ul class="classOpUl" id="addCreateClassUl">
+				<a href="" onclick="javascript:var href='join_grade.html'; if(!isH5Only) href+='://head?title=[加入班级,false,,]&rightHandle:[isExist:false]'; this.href=href;">
+					<li><span class="joinClass"></span>加入班级</li>
+				</a>
+				<a name="createClass4gradeManage" onclick="createClassFlag();" style="display: none;"><li><span class="createClass"></span>创建班级</li></a>
+			</ul>
+		</article>
+	</body>
+</html>

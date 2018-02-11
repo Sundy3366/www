@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/common/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common/idangerous.swiper.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/classNotice/class_notice.css" />
+	</head>
+
+	<body ><!--class="bodyBg-f2f6f9"-->
+		<!--
+			白色背景调用 bodyBg-fff
+			彩色背景调用 bodyBg-f2f6f9
+		-->
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span id="changeClassTitle" class="title">
+				<span class="f0">
+					<div class="f0">
+						<span class="f36_2">通知详情</span>
+			</div>
+			</span>
+			</span>
+			<!--<span class="right f0">
+				<span class="addGroupIcon"></span>
+			</span>-->
+		</header>
+		<article class="class_notice_detail" style="display:none;">
+			<div class="detaile_con">
+				<p id="activityTitle"></p><!--标题-->
+				<img id="headImg" hidden="hidden"/>
+				<p id="activityContent"></p><!--内容-->
+				<span id="talkNum" onclick="replyMain();" style="display:none;">0</span>
+			</div>
+            <div id="replyContent" style="display:none;">
+                <div class="h10"></div>
+                <div class="comments_con">
+                    <h3>全部评论</h3>
+                    <div id="replyList" ><!--class="swiper-container"-->
+                        <div class="divUl"><!--swiper-wrapper  -->
+                    <!--<ul id="replyList">
+                        <li>
+                            <dl>
+                                <dt><img src="../../img/teacher/course/content_list_autonomous-test@2x.png"/></dt>
+                                <dd>
+                                    <h4>小柒</h4>
+                                    <time>2月21日 12:00</time>
+                                    <p>你很不错哦，那就好人有好报，多添加几个字换行</p>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><img src="../../img/teacher/course/content_list_autonomous-test@2x.png"/></dt>
+                                <dd>
+                                    <h4>小柒</h4>
+                                    <time>2月21日 12:00</time>
+                                    <p>回复 <span class="cnd_color">小柒</span><span> 那</span></p>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>-->
+                    </div>
+                    </div>
+                </div>
+            </div>
+		</article>
+		<!--status为true时上拉加载-->
+		<div class="bottomMoreLoading" onclick="loadingMore4ClassNoticeDetailReply()" style="position: relative!important;">查看更多</div>
+		<div id="editContext" class="contextMenu">
+			<div class="bgo40" onclick="$(this).parent().hide()"></div>
+			<div class="content">
+				<ul>
+					<li data="reply">回复</li>
+					<li data="del"  style="display: none;">删除</li>
+					<li data="copy">复制</li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../js/common/idangerous.swiper.min.js"></script>
+		<script type="text/javascript" src="../../js/parent/parent_main.js" ></script>
+		<script type="text/javascript" src="../../js/common/touch-0.2.14.min.js" ></script>
+		<script type="text/javascript" src="../../js/common/emoji/emoji.js" ></script>
+		<script>
+			var currPageNum = 0;//当前pageNum
+			var touchType ;//0:上拉(加载)或1:下拉(刷新)
+			var currMySwiper,
+				replySwiper;//当前swiper对象
+		/*		
+			//请求参数
+			var jid = getLocalStorageItem(webStorageVars[2]);
+			var schoolId = getLocalStorageItem(webStorageVars[5]);
+			//获取传过来的参数
+			var strParam = getQueryStringFromUrl();
+			var activityId = strParam.activityId;
+			var pageNum = strParam.pageNum;
+			var data="jid="+jid+"&schoolId="+schoolId+"&pageNum="+pageNum+"&activityId="+activityId;
+			getSignCode(data,Config.getActivityInfoUrl(),"activityDetail_");*/
+			var strParam = getQueryStringFromUrl();
+			var activityId = strParam.activityId;
+			$(function(){
+				getActivityDeail();
+			})
+		</script>
+	</body>
+
+</html>

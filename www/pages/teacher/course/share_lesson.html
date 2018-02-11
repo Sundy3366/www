@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../../css/common/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/teacher/course.css" />
+		<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/courses.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				initShareSet();
+			});
+		</script>
+	</head>
+
+	<body class="bodyBg-fff">
+		<!--彩色背景调用 bodyBg-f2f6f9-->
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span id="changeClassTitle" class="title">
+				<span class="f0">
+					<div class="f0">
+						<span class="f36_2">分享课</span>
+					</div>
+				</span>
+			</span>
+			<span class="right f0">
+			</span>
+		</header>
+		<article id="shareLessonSetDiv" class="share_lesson_set">
+			<h3>设置分享等级</h3>
+			<!-- class="hig"-->
+			<a href="javascript:;" data="1">公开</a>
+			<a href="javascript:;" data="2">仅校内</a>
+			<a href="javascript:;" data="3">仅自己</a>
+		</article>	
+	</body>
+
+</html>

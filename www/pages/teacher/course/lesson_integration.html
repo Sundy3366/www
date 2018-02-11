@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../../css/common/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/teacher/course.css" />
+		<script type="text/javascript" >
+			var webRoot = document.location.href.split("pages/teacher/course/lesson_integration.html")[0];
+		</script>
+		<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/courses.js" ></script>
+		<script type="text/javascript" >
+			$(function(){
+				initLessonPointHeader();
+				getLessonPointInfo();
+			});
+		</script>
+	</head>
+
+	<body class="bodyBg-fff">
+		<!--彩色背景调用 bodyBg-f2f6f9-->
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span id="changeClassTitle" class="title">
+				<span class="f0">
+					<div class="f0">
+						<span class="f36_2">&nbsp;</span>
+						<span class="arrowDown"></span>
+						<!-- 
+							收起时调用  arrowDown
+							展开时调用  arrowUp  
+						-->
+					</div>
+				</span>
+			</span>
+			<span class="right f0">
+			</span>
+		</header>
+		<!-- 班级学科选择  小弹窗  -->
+		<div id="changeClassDiv" class="changeClassesSec changeClassesSecDiv">
+			<div class="bgo40"></div>
+			<ul>
+				<!--
+				<li>
+					<span class='space'></span>
+					<span class="f36_2 text">高一(1)班</span>
+				</li>
+				<li>
+				-->
+					<!--
+                    	作者：wdjx_123@sina.cn
+                    	时间：2016-01-23
+                    	描述：选中时添加hover,未选时为space
+                    -->
+				<!--
+					<span class='space hover'></span>
+					<span class="f36_2 text">高一(2)班</span>
+				</li>
+				<li>
+					<span class='space'></span>
+					<span class="f36_2 text">高一(4)班</span>
+				</li>
+				-->
+			</ul>
+		</div>
+		<article class="lesson_integration">
+			<div>
+				<div id="allClassPointDiv">
+					<ul class="ranking_list">
+					</ul>
+				</div>
+				<div id="groupPointDiv" style="position: relative; display: none;">
+				</div>
+			</div>
+		</article>
+	</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!--
+	作者：wdjx_123@sina.cn
+	时间：2016-01-28
+	描述：新建小组
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title>爱学</title>
+		<link rel="stylesheet" href="../../../css/teacher/grade.css"/>
+		<link rel="stylesheet" href="../../../css/common/public.css"/>
+		<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/grade.js" ></script>
+		<script>
+			$(function(){
+				initAddGroup();
+			});
+		</script>
+	</head>
+	<body class="bgcF3F6F8 f36_2">
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span id="changeClassTitle" class="title">
+				<span class="f0">
+					<div class="f0">
+						<span class="f36_2">新建小组</span>
+					</div>
+				</span>
+			</span>
+			<span class="right f0">
+			</span>
+		</header>
+		<article class="addGroup">
+			<span class="newGroupDiagram"></span>
+			<div class="diagramDesc">快给你的小组起个精彩的名称吧</div>
+			<div class="addGroupInput bgcFFFFFF">
+				<!--
+                	作者：wdjx_123@sina.cn
+                	时间：2016-02-15
+                	描述：小组名最多8个汉字
+                -->
+				<input id="groupName" placeholder="小组名称"  oninput="if($.trim(this.value).length>8) this.value=this.value.substr(0,8);"/>
+				<div class="right">
+					<span class="spliter"></span>
+					<span id="submitBtn" class="btnText" onclick="addGroupSubmit()">确定</span>
+				</div>
+			</div>
+		</article>
+	</body>
+</html>

@@ -1,0 +1,194 @@
+/*自主学习*/
+.independent_student_box{
+	padding: 0 15px;
+	background: #fff;
+	border-bottom: 1px solid #d9d9d9;
+	box-shadow: 0 1px 1px #e3e6e6;
+	margin-bottom: 16px;
+}
+.independent_student_box .title{
+	height: 55px;
+	line-height: 55px;
+	font-size: 16px;
+	font-weight: normal;
+	color: #333333;
+	border-bottom: 1px solid #d9d9d9;
+}
+.independent_student_box .student_list li{
+	padding: 14px 5px 8px;
+	border-bottom: 1px solid #d9d9d9;
+}
+.independent_student_box .student_list li:last-child{
+	border-bottom: none;
+}
+.independent_student_box .student_list li .icon_pub{
+	float: left;
+	width: 23px;
+	height: 23px;
+}
+.independent_student_box .student_list li .zaixianban_icon{
+	background: url(../../img/parent/zaixianban_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.independent_student_box .student_list li.desible .zaixianban_icon{
+	background:url(../../img/parent/zaixinban_hui_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.independent_student_box .student_list li .biaoce_icon{
+	background: url(../../img/parent/biaoce_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.independent_student_box .student_list li.desible .biaoce_icon{
+	background:url(../../img/parent/biaoce_hui_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.independent_student_box .student_list li .gaoqing_icon{
+	background:url(../../img/parent/gaoqing_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.independent_student_box .student_list li.desible .gaoqing_icon{
+	background:url(../../img/parent/gaoqing_hui_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.independent_student_box .student_list li .daoxue_icon{
+	background:url(../../img/parent/daoxue_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.independent_student_box .student_list li.desible .daoxue_icon{
+	background:url(../../img/parent/daoxue_hui_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.independent_student_box .student_list li .zhibo_icon{
+	background:url(../../img/parent/zhibo_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.independent_student_box .student_list li.desible .zhibo_icon{
+	background:url(../../img/parent/zhibo_hui_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.independent_student_box .student_list li .hubang_icon{
+	background:url(../../img/parent/hubang_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.independent_student_box .student_list li.desible .hubang_icon{
+	background:url(../../img/parent/hubang_hui_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.independent_student_box .student_list li .danci_icon{
+	background:url(../../img/parent/danci_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.independent_student_box .student_list li.desible .danci_icon{
+	background:url(../../img/parent/danci_hui_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.independent_student_box .student_list li .zuowen_icon{
+	background:url(../../img/parent/zuowen_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.independent_student_box .student_list li.desible .zuowen_icon{
+	background:url(../../img/parent/zuowen_hui_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.independent_student_box .student_list li .zhandui_icon{
+	background:url(../../img/parent/zhandui_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.independent_student_box .student_list li.desible .zhandui_icon{
+	background:url(../../img/parent/zhandui_hui_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.independent_student_box .student_list li .list_con{
+	width: 1000px;
+	display:table-cell;
+	padding-left: 5px;
+	vertical-align: top;
+}
+.independent_student_box .student_list li .list_con h3{
+	height: 23px;
+	line-height: 23px;
+	font-weight: normal;
+	font-size: 16px;
+	color:#333333;
+}
+.independent_student_box .student_list li .list_con p{
+	font-size: 14px;
+	color: #666;
+	line-height: 20px;
+}
+.independent_student_box .student_list li .list_con p span{
+	 color: #333;
+	 padding: 0 4px;
+}
+.independent_student_box .student_list li.desible{
+	background: #f1f1f1;
+}
+.independent_student_box .student_list li.desible .list_con h3,.independent_student_box .student_list li.desible .list_con p,.independent_student_box .student_list li.desible .list_con p span{
+	color: #999;
+}
+
+/* 未完成作业 */
+.no_finish_homeword_box{
+	width: 100%;
+	background: #fff;
+	border-bottom: 1px solid #dcdcdc;
+	margin-bottom: 10px;
+}
+.no_finish_homeword_box:last-child{ margin-bottom: 0;}
+.no_finish_homeword_box .title{
+	height: 50px;
+	line-height: 50px;
+	font-size: 18px;
+	color: #4AACEE;
+	padding: 0 15px;
+	border-bottom: 1px solid #DCDCDC;
+	font-weight: normal;
+}
+.no_finish_homeword_box .title p{
+	display: inline-block;
+	font-size: 14px;
+	color: #666;
+	padding-left: 4px;
+}
+.no_finish_homeword_box .title p span{
+	color: #4AACEE;
+}
+.no_finish_homeword_box .list_box{
+	padding-left: 15px;
+}
+.no_finish_homeword_box .list_box li{
+	height: 65px;
+	padding-right: 15px;
+	border-bottom: 1px solid #DCDCDC;
+}
+.no_finish_homeword_box .list_box li:last-child{ border-bottom: none;}
+.no_finish_homeword_box .list_box li .name{
+	padding: 12px 0 6px;
+	font-size: 15px;
+	color: #333;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.no_finish_homeword_box .list_box li .bottom{
+	font-size: 0;
+	color: #999;
+}
+.no_finish_homeword_box .list_box li .bottom .time_tongji{
+	display: inline-block;
+	font-size: 12px;	
+}
+.no_finish_homeword_box .list_box li .bottom span.time{
+	padding-left: 4px;
+}
+.colorf5{
+	color: #FF8200;
+}
+.no_finish_homeword_box .list_box .num_box{
+	float: right;
+	height: 12px;
+	padding-right: 17px;
+	background: url(../../img/parent/tongji_people@2x.png) no-repeat right center;
+	background-size: auto 100%;
+	font-size: 12px;
+}

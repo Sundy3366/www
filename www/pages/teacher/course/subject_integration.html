@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../../css/common/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/teacher/course.css" />
+		<script type="text/javascript" >
+			var webRoot = document.location.href.split("pages/teacher/course/subject_integration.html")[0];
+		</script>
+		<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/courses.js" ></script>
+		<script type="text/javascript" >
+			$(function(){
+				initSubjectPointHeader();
+				getSubjectPointInfo();
+			});
+		</script>
+	</head>
+
+	<body class="bodyBg-fff">
+		<!--彩色背景调用 bodyBg-f2f6f9-->
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span id="changeClassTitle" class="title">
+				<span class="f0">
+					<div class="f0">
+						<span class="f36_2">&nbsp;</span>
+						<span class="arrowDown"></span>
+						<!-- 
+							收起时调用  arrowDown
+							展开时调用  arrowUp  
+						-->
+					</div>
+				</span>
+			</span>
+			<span class="right f0">
+			</span>
+		</header>
+		<!-- 班级学科选择  小弹窗  -->
+		<div id="changeClassDiv" class="topNav_dropDown_select_bg tm_display_no" style="position: absolute;background: none;">
+				<div class="bgo40"></div>
+				<ul class="changeClassesSubject_con">
+					<!--
+					<li>
+						<h2>高一（1）班</h2>
+						<p><a href="" class="hig">语文</a><a href="">语文</a></p>
+					</li>
+					<li>
+						<h2>高二（1）班</h2>
+						<p><a href="">语文</a><a href="">化学</a><a href="">数学</a><a href="">英语</a></p>
+					</li>
+					<li>
+						<h2>高三（1）班</h2>
+						<p><a href="">语文</a><a href="">化学</a><a href="">数学</a><a href="">英语</a><a href="">数学</a><a href="">物理</a></p>
+					</li>
+					-->
+				</ul>
+			<!--</div>-->
+		</div>
+		<article class="lesson_integration">
+			<div id="changeDetailTab" class="tabDiv f30_2 tm_display_no" style="overflow: hidden;">
+				<ul>
+					<li class="selected" data="allClassPointDiv">全班排名</li>
+					<li data="groupPointDiv">小组排名</li>
+				</ul>
+			</div>
+			<div>
+				<div id="allClassPointDiv">
+					<ul class="ranking_list">
+						<!--
+						<li>
+							<span class="one"></span>
+							<div class="poto">
+								<p>
+									<img src="../../../img/teacher/course/poto.jpg"/>	
+								</p>
+								<span class="crown"></span>
+							</div>
+							<p>小柒</p>
+							<em>198</em>
+						</li>
+						<li>
+							<span class="two"></span>
+							<div class="poto">
+								<p>
+									<img src="../../../img/teacher/course/poto.jpg"/>	
+								</p>
+							</div>
+							<p>康学峰</p>
+							<em>47667</em>
+						</li>
+						<li>
+							<span class="three"></span>
+							<div class="poto">
+								<p>
+									<img src="../../../img/teacher/course/poto.jpg"/>	
+								</p>
+							</div>
+							<p>刘孝原</p>
+							<em>765</em>
+						</li>
+						<li>
+							<span>4</span>
+							<div class="poto">
+								<p>
+									<img src="../../../img/teacher/course/poto.jpg"/>	
+								</p>
+							</div>
+							<p>李宝安</p>
+							<em>564</em>
+						</li>
+						-->
+					</ul>
+				</div>
+				<div id="groupPointDiv" style="position: relative; display: none;">
+					<!--
+					<h3 class="small-title">小组名称</h3>
+					<ul class="ranking_list">
+					</ul>
+                    -->
+				</div>
+			</div>
+		</article>
+	</body>
+
+</html>

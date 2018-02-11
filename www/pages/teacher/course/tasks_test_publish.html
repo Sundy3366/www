@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title>爱学</title>
+		<link rel="stylesheet" type="text/css" href="../../../css/common/public.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/teacher/course.css" />
+		<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/courses.js" ></script>
+		<script type="text/javascript" >
+			$(function(){
+				initClassGroupList();
+				initAllDateSetting(7);//初始化时间
+			});
+		</script>
+	</head>
+	<body class="bodyBg-fff">
+		<!--
+		白色背景调用 bodyBg-fff	
+		彩色背景调用 bodyBg-f2f6f9
+		-->
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span class="title">
+				<span class="f0">
+					<span class="f36_2">发布</span>
+				</span>
+			</span>
+			<span class="right f0">
+				<span class="headerOkBtn" onclick="publishSubmit(2)">完成</span>	
+			</span>
+		</header>
+		<article class="video_publishing">
+			<ul id="classGroupUl" class="who_con">
+			</ul>
+			<h3 class="small_title">试卷名称</h3>
+			<div class="examinationName">
+				<input type="text" id="paperName" value="" />
+			</div>
+			<h3 class="small_title">试卷作答时长（选填）</h3>
+			<div class="papers_answer_time ">
+				<input type="tel" size=3 maxlength=3
+					id="paperUseTime"
+					oninput="inputHandleInput(this)" 
+					onpaste="return inputHandlePaste()"
+					/>
+				<p>分钟</p>
+			</div>
+			<h3 class="small_title">时间
+			<a href="javascript:;" name="fenbanSettingBtn" onclick="fenbanSetting4Publish(this)">分班设置</a></h3>
+			<!-- 点击之后 文字切换为   取消分班设置-->
+			<div id="allDateSettingDiv" class="date_set_box">
+				<div class="date_set_pub pb18Pix">
+					<span>开始：</span>
+					<div class="date_select">
+						<p ></p>
+						<input name="allDateSettingStart" type="datetime-local" oninput="dateInputForCreateLesson(this)"/>		
+					</div>
+				</div>
+				<div class="date_set_pub">
+					<span>结束：</span>
+					<div class="date_select">
+						<p></p>
+						<input name="allDateSettingEnd" type="datetime-local" oninput="dateInputForCreateLesson(this)"/>		
+					</div>
+				</div>	
+			</div>
+			<div id="fenbanSettingDiv" ><!--class="tm_display_no"-->
+			</div>
+		</article>
+		<script>
+			function inputHandlePaste(){
+				var pasteValue = event.clipboardData.getData('text/plain');
+				var inputValue =event.target.value;
+				if(inputValue>999){
+					event.target.value = 999;
+					return false;
+				}
+				if(pasteValue=="" || pasteValue.search(/^\d{0,3}$/ig)==-1){
+					return false;
+				}else{
+					var len = 3 - inputValue.length;
+					event.target.value = event.target.value + pasteValue.substr(0,len);
+				}
+				return true;
+			}
+			function inputHandleInput(t){
+				if(!/^\d{0,3}$/ig.test(t.value))
+					t.value = t.value.substring(0,t.value.length-1);
+			}
+		</script>
+	</body>
+</html>

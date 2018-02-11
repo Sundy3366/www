@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/common/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/classNotice/class_notice.css" />
+	</head>
+
+	<body class="bodyBg-f2f6f9">
+		<!--
+			白色背景调用 bodyBg-fff
+			彩色背景调用 bodyBg-f2f6f9
+		-->
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span id="changeClassTitle" class="title">
+				<span class="f0">
+					<div class="f0">
+						<span class="f36_2">发布给</span>
+			</div>
+			</span>
+			</span>
+			<span onclick="createClassNoticeCommit();" class="right f0">
+				<span class="headerOkBtn">完成</span>
+			</span>
+		</header>
+		<section class="public_notice_permissions">
+			<p class="permissions_set">
+				<a id="parentLook" href="javascript:void(0);" class="hig">家长可见</a>
+				<a id="studentLook" href="javascript:void(0);" class="hig">学生可见</a>
+			</p>
+			<div id="parentTalk" class="radio mt28Pix">
+				<span id="isTalk" class="hig"></span>
+				<p>家长评论</p>
+			</div>
+		</section>
+		<section class="public_notice_range">
+			<h3>范围</h3>
+			<div id="classScope" class="class_select">
+					<!--<a href="javascript:void(0);" onclick="classSelect(1)" id="1">高一(1)班</a>
+					<a href="javascript:void(0);" onclick="classSelect(2)" id="2">高一(1)班</a>
+					<a href="javascript:void(0);" onclick="classSelect(3)" id="3">高一(1)班</a>
+					<a href="javascript:void(0);" data="4">高一(1)班</a>
+					<a href="javascript:void(0);" data="5">高一(1)班</a>
+					<a href="javascript:void(0);" data="6">高一(1)班</a>
+					<a href="javascript:void(0);" data="7">高一(1)班</a>
+					<a href="javascript:void(0);" data="8">高一(1)班</a>-->
+			</div>
+		</section>
+	</body>
+	<script type="text/javascript" src="../../js/common/jquery-1.9.1.min.js" ></script>
+	<script type="text/javascript" src="../../js/common/common.js" ></script>
+	<script type="text/javascript" src="../../js/teacher/teacher_class_notice.js" ></script>
+	<script>
+	    $(function(){
+	    	    //获取班级列表
+	    		var classListStr = $.parseJSON(getLocalStorageItem(webStorageVars[21]));
+	    		if(classListStr){
+	    			var classStr = "";
+	    			for(i=0;i<classListStr.length;i++){
+	    				classStr += '<a onclick="classSelect('+classListStr[i].classId+');" href="javascript:void(0);" id="'+classListStr[i].classId+'">'+classListStr[i].className+'</a>';
+	    			}
+	    			document.getElementById("classScope").innerHTML = classStr;
+	    		}
+		    	document.getElementById("parentLook").addEventListener("click",function(){
+				if(this.classList.contains("hig") && document.getElementById("studentLook").classList.contains("hig")){
+					$("#parentTalk").hide();
+					this.classList.remove("hig");
+				}else if(this.classList.contains("hig") && !document.getElementById("studentLook").classList.contains("hig")){
+					$("#parentTalk").hide();
+					this.classList.remove("hig");
+					document.getElementById("studentLook").classList.add("hig");
+				}else if(!this.classList.contains("hig")){
+					$("#parentTalk").show();
+					this.classList.add("hig");
+				}
+			});
+			document.getElementById("studentLook").addEventListener("click",function(){
+				if(this.classList.contains("hig") && document.getElementById("parentLook").classList.contains("hig")){
+					this.classList.remove("hig");
+				}else if(this.classList.contains("hig") && !document.getElementById("parentLook").classList.contains("hig")){
+					this.classList.remove("hig");
+					$("#parentTalk").show();
+					document.getElementById("parentLook").classList.add("hig");
+				}else if(!this.classList.contains("hig")){
+					this.classList.add("hig");
+				}
+			});
+			document.getElementById("isTalk").addEventListener("click",function(){
+				if(this.classList.contains("hig")){
+					this.classList.remove("hig");
+				}else{
+					this.classList.add("hig");
+				}
+			});
+	   });
+	</script>
+</html>

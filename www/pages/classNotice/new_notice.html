@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/common/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/classNotice/class_notice.css" />
+	</head>
+
+	<body class="bodyBg-fff">
+		<!--
+			白色背景调用 bodyBg-fff
+			彩色背景调用 bodyBg-f2f6f9
+		-->
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span id="changeClassTitle" class="title">
+				<span class="f0">
+					<div class="f0">
+						<span class="f36_2">新建通知</span>
+			</div>
+			</span>
+			</span>
+			<span onclick="createClassNoticeNext();" class="right f0">
+				<span class="headerOkBtn">下一步</span>
+			</span>
+		</header>
+		<section class="new_notice_title">
+			<input id="noticeTitle" type="text" name="" id="" value=""  placeholder="标题" maxlength="20"/>
+		</section>
+		<section class="new_notice_con">
+			<!--
+            	background: url(../../img/parent/parent_btn_associate_children_default@2x.png) no-repeat center;
+            -->
+			<div class="new_notice_preview_img" id="previewImg" onclick="imgViewShow(this.style.backgroundImage.substring(4,this.style.backgroundImage.length-1))" style="display: none;">
+				<a href="javascript:;" onclick="removeImgForNotice()" class="del_icon" style="top: 3px;
+    						right: -3px;position: relative;float: right;background-size: 81%;"></a>
+			</div>
+			<textarea id="noticeContent" onfocus="contentHeightHandle(this)" name="" rows="" cols="" placeholder="内容" maxlength="2000"></textarea>
+		</section>
+		<!--background: url(../../img/parent/load_fail@2x.png) no-repeat;background-position-x: center;-->
+		<!--
+		<div id="previewImg" onclick="imgViewShow(this.style.backgroundImage.substring(4,this.style.backgroundImage.length-1))" style="position: absolute;bottom: 15px; display: none;width: 92%;margin:0 4%;height: 100px;text-align: center;background-position-x: center;">
+			<a href="javascript:;" onclick="removeImgForNotice()" class="del_icon" style="right: 10px;position: relative;float: right;"></a>
+		</div>
+		-->
+		<a href="javascript:;" id="getPicBtn" onclick="getPicPopShow()" class="new_notice_camera"></a>
+		<div id="getPicPopDiv" onclick="getPicPopClose()" class="popup_windows" style="display: none;">
+				<div class="camera_con">
+					<p class="camera">
+						<a href="javascript:;" onclick="getANoticePic(0)"></a>
+						<span>拍照</span>
+					</p>
+					<p class="poto">
+						<a href="javascript:;" onclick="getANoticePic(1)"></a>
+						<span>相册</span>
+					</p>
+				</div>
+			</div>
+		<script type="text/javascript" src="../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../js/teacher/teacher_class_notice.js" ></script>
+		<script>
+			function contentHeightHandle(t){
+//                setTimeout(function(){
+//                           $(document.body).animate({scrollTop:0},100);
+//                },100);
+            }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no,date=no" />
+		<title>爱学</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/student/student.css" />
+	</head>
+
+	<body>
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span class="title">
+				<span class="f0">
+					<span class="f36_2">未完成作业</span>
+				</span>
+			</span>
+			<!--
+            	作者：wdjx_123@sina.cn
+            	描述：头 右侧按钮位置
+            -->
+			<span class="right f0">
+				<span class="sortIcon" onclick="clickSortOptionsBtn(true)"></span>
+			</span>
+		</header>
+		<div name="sortOptionsPop" style="display: none;">
+			<div class="bgo0" style="z-index: 2;" onclick="clickSortOptionsBtn()"></div>
+			<ul class="more_small_popup_windows" style="position:absolute;">
+				<li><p class="timeSortIcon"><a href="javascript:;" onclick="selectSortTime()">时间</a></p></li>
+				<li><p class="subjectSortIcon"><a href="javascript:;" onclick="selectSortSubject()">学科</a></p></li>
+			</ul>
+		</div>
+		<div class="topFlushLoading"><span class="loadingIcon"></span>下拉刷新</div>
+		<!--status为true时上拉加载-->
+		<div class="bottomMoreLoading" onclick="loadingMore4LessonList()">查看更多</div>
+		<script type="text/javascript" src="../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../js/student/student_course.js" ></script>
+		<script>
+			$(function(){
+				//请求参数
+				var jid = getLocalStorageItem(webStorageVars[2]);
+				var data="jid="+jid;
+//				getSignCode(data,Config.getNetClassInfoUrl().split("?m=")[1],"getNetClassInfo_");
+			});
+		</script>
+	</body>
+
+</html>

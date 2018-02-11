@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../../css/common/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/classNotice/class_notice.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/common/idangerous.swiper.css" />
+	</head>
+
+	<body class="bodyBg-f2f6f9">
+		<!--
+			白色背景调用 bodyBg-fff
+			彩色背景调用 bodyBg-f2f6f9
+		-->
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span id="changeClassTitle" class="title">
+				<span class="f0">
+					<div class="f0">
+						<span class="f36_2">校内公告</span>
+					</div>
+				</span>
+			</span>
+			<span class="right f0">
+			</span>
+		</header>
+		<div class="topFlushLoading"><span class="loadingIcon"></span>下拉刷新</div>
+		<article class="class_notice">
+			<div id="noticeList" class="swiper-container">
+		  		<div class="swiper-wrapper class_notice_list">
+		  			<!--
+		  			<div class="mt17Pix swiper-slide">
+						<div class="con">
+							哒哒哒
+							<div class="msg_box">发布者：<label class="pr8Pix">小柒</label>  <label>05-25  12:00</label></div>
+						</div>
+					</div>
+					-->
+				</div>
+			</div>
+			<!--
+			<ul class="class_notice_list" id="noticeList">
+			</ul>
+			-->
+			<div class="bl_img_div">
+				<img class="bl_img" src="../../../img/teacher/teacherMain/nothing_in_the_world@2x.png"/>
+			</div>
+		</article>
+		<!--status为true时上拉加载-->
+		<div class="bottomMoreLoading" onclick="loadingMore4LessonList()">查看更多</div>
+		<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js"></script>
+		<script type="text/javascript" src="../../../js/common/idangerous.swiper.min.js"></script>
+        <script type="text/javascript" src="../../../js/common/touch-0.2.14.min.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/bulletin_list.js" ></script>
+		<script>
+			var currPageNum = 0;//当前pageNum
+			var touchType ;//0:上拉(加载)或1:下拉(刷新)
+			var currMySwiper;//当前swiper对象
+            goBack();
+			$(function(){
+				//请求参数
+//				var jid = getLocalStorageItem(webStorageVars[2]);
+//				var schoolId = getLocalStorageItem(webStorageVars[5]);
+				getBulletList();
+			})
+		</script>
+	</body>
+
+</html>

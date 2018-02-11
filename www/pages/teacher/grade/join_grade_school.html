@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title>爱学</title>
+		<link rel="stylesheet" type="text/css" href="../../../css/common/public.css"/>
+	    <link rel="stylesheet" type="text/css" href="../../../css/teacher/join_grade.css"/>
+	</head>
+	<body>
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span class="title">
+				<span class="f0">
+					<span class="f36_2">选学校</span>
+				</span>
+			</span>
+			<span class="right f0">
+				<span></span>
+			</span>
+		</header>
+		<div class="jps_find_div1">
+			<div class="jps_input_div">
+				<input id="inputSearch" class="jps_input" type="search" style="display: none;"/> <!--placeholder="查找学校" -->
+				<div id="inputDiv">
+					<!--style="display: inline-block;position: absolute;top: 0;"-->
+					<span style="display: inline-block;" class="search_icon_pub"></span><span style="font-size: 14px;color: #999999;">
+						查询学校
+					</span>
+				</div>
+				<!--<span class="search_icon_pub"></span>-->
+			</div>
+		</div>
+		<ul id="schoolList" class="jp_ul">
+			<!--<li class="colorf1 f32_2 jp_height1" data="" onclick="findClass(this);">
+				北京四中网校
+			</li>-->
+		</ul>
+		<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/join_grade.js" ></script>
+		<script>
+			var schoolList = [];//学校列表
+			$(function(){
+				//获取传过来的参数，来判断请求从哪里来,flag为0，则表示请求来源于创建班级
+				var strParam = getQueryStringFromUrl();
+				var flag = strParam.flag;
+				getSchoolList(flag);
+				$("#inputDiv").on("click",function(){
+				   $(this).hide().prev().show();
+				}).prev().on("blur",function(){
+					$("#inputDiv").css("display","inline-block");
+					$(this).hide();
+				});
+			});
+			//搜索查询
+			$("input[type=search]").on("input paste",function(){
+				var inputVal = $(this).val();
+				if(inputVal.search(/[\/,\\]/g)!=-1){
+					inputVal = inputVal.replace(/\//g,"").replace(/\\/g,"");
+					$(this).val(inputVal);
+					return false;
+				}
+				var resultList = [];
+				if(inputVal){
+					var searchReg = eval('/'+inputVal+'/ig');
+					$.each(schoolList, function(i,v) {
+						if(v.schoolName.search(searchReg)!=-1)
+							resultList.push(this);
+					});
+				}else{
+					resultList = schoolList;
+				}
+				
+				var schoolListUl = $("#schoolList").html("");
+				$.each(resultList, function(i,v) {
+					var liHtml = "<li class='colorf1 f32_2 jp_height1' data='"+v.schoolId+"' onclick='findClass(this);'>"+
+								 v.schoolName+
+								 "</li>";
+					schoolListUl.append(liHtml);
+				});
+				
+			});
+		</script>
+	</body>
+</html>

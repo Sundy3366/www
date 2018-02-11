@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title>爱学</title>
+		<link rel="stylesheet" type="text/css" href="../../../css/common/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/teacher/course.css" />
+		<script type="text/javascript" >
+			var webRoot = document.location.href.split("pages/teacher/course/statistics.html")[0];
+		</script>
+		<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/courses.js" ></script>
+		<script type="text/javascript" src="../../../js/common/echarts/echarts.js"></script>
+ 		<script type="text/javascript" src="../../../js/common/echarts/echartsConfig.js"></script>
+		<script type="text/javascript" >
+			$(function(){
+				initStatisticsInfo();
+			});
+		</script>
+	</head>
+
+	<body class="">
+		<!--
+			白色背景调用 bodyBg-fff
+			彩色背景调用 bodyBg-f2f6f9
+		-->
+		<header class="titleBarHeader" >
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span id="changeClassTitle" class="title">
+				<span class="f0">
+					<div class="f0">
+						<span class="f36_2">高一(1)班</span>
+			</div>
+			</span>
+			</span>
+			<span class="right f0">
+				<span class="navBtnCountdown" onclick="remindHomeWorkPopShow()"></span>
+			</span>
+		</header>
+		<div id="changeClassDiv" class="changeClassesSec">
+			<div class="bgo40"></div>
+			<ul>
+			</ul>
+		</div>
+		<!--任务已全部完成 占位图-->
+		<article id="allAnswerZW" class="zwPublic tm_display_no">
+			<img src="../../../img/teacher/course/zw7@2x.png" />
+		</article>
+		<!--学生还没作答 占位图-->
+		<article id="noAnswerZW" class="zwPublic tm_display_no">
+			<img src="../../../img/teacher/course/zw15@2x.png" />
+		</article>
+		<!--
+		<article class="zwPublic">
+			<img src="../../../img/teacher/course/zw7@2x.png" />
+			<!--任务已全部完成 占位图-->
+		<!--	<img src="../../../img/teacher/course/zw15@2x.png" />-->
+			<!--学生还没作答 占位图-->
+		<!--</article>-->
+		
+		<!-- 饼状图 占位图  -->
+		<section id="circleChartSec" style="height: 228px;width: 100%;" class="pieChart tm_display_no">
+		</section>
+		<!-- 柱状图 占位图 -->
+		<section id="barChartSec" style="height: 301px;width: 100%;" class="pieChart tm_display_no">
+		</section>
+		<section id="studyTimeSec" class="selectStatistics tm_display_no">
+		</section>
+		<section id="userListSec" class="selectStatistics tm_display_no">
+		</section>
+		<section id="noFinUserListSec" class="selectStatistics tm_display_no">
+		</section>
+		<!--
+		<section class="selectStatistics">
+			<h2>正确AB: <span>8人</span></h2>
+			<table cellspacing="0" cellpadding="0" class="answerList">
+				<tr>
+					<td>小柒</td>
+					<td>李宝安</td>
+					<td>刘晓原</td>
+					<td>熊宝</td>
+					<td>李文华</td>
+				</tr>
+				<tr>
+					<td>康雪峰</td>
+					<td>任永亮</td>
+					<td>宋亚明</td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			<h2>未选A: <span>7人</span></h2>
+			<table cellspacing="0" cellpadding="0" class="answerList">
+				<tr>
+					<td>小柒</td>
+					<td>李宝安</td>
+					<td>刘晓原</td>
+					<td>熊宝</td>
+					<td>李文华</td>
+				</tr>
+				<tr>
+					<td>康雪峰</td>
+					<td>任永亮</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			<h2>未选B: <span>7人</span></h2>
+			<table cellspacing="0" cellpadding="0" class="answerList">
+				<tr>
+					<td>小柒</td>
+					<td>李宝安</td>
+					<td>刘晓原</td>
+					<td>熊宝</td>
+					<td>李文华</td>
+				</tr>
+				<tr>
+					<td>康雪峰</td>
+					<td>任永亮</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+		</section>
+		-->
+		<!--
+		<article class="lesson_integration bodyBg-fff">
+			<div class="statistics_tab_two_column_box">
+				<ul class="statistics_tab_two_column">
+					<li>全班排名</li>
+					<li class="hig">小组排名</li>
+				</ul>
+			</div>
+			<div class="statistics_ranking_list">
+				<h3>组1</h3>
+				<ul class="ranking_list">
+					<li>
+						<span class="one"></span>
+						<div class="poto">
+							<p>
+								<img src="../../../img/teacher/course/poto.jpg" />
+							</p>
+							<span class="crown"></span>
+						</div>
+						<p>小柒</p>
+						<em>198</em>
+					</li>
+					<li>
+						<span class="two"></span>
+						<div class="poto">
+							<p>
+								<img src="../../../img/teacher/course/poto.jpg" />
+							</p>
+						</div>
+						<p>康学峰</p>
+						<em>47667</em>
+					</li>
+					<li>
+						<span class="three"></span>
+						<div class="poto">
+							<p>
+								<img src="../../../img/teacher/course/poto.jpg" />
+							</p>
+						</div>
+						<p>刘孝原</p>
+						<em>765</em>
+					</li>
+					<li>
+						<span>4</span>
+						<div class="poto">
+							<p>
+								<img src="../../../img/teacher/course/poto.jpg" />
+							</p>
+						</div>
+						<p>李宝安</p>
+						<em>564</em>
+					</li>
+					<li>
+						<span>5</span>
+						<div class="poto">
+							<p>
+								<img src="../../../img/teacher/course/poto.jpg" />
+							</p>
+						</div>
+						<p>李宝安</p>
+						<em>564</em>
+					</li>
+					<li>
+						<span>6</span>
+						<div class="poto">
+							<p>
+								<img src="../../../img/teacher/course/poto.jpg" />
+							</p>
+						</div>
+						<p>李宝安</p>
+						<em>564</em>
+					</li>
+					<li>
+						<span>7</span>
+						<div class="poto">
+							<p>
+								<img src="../../../img/teacher/course/poto.jpg" />
+							</p>
+						</div>
+						<p>李宝安</p>
+						<em>564</em>
+					</li>
+					<li>
+						<span>8</span>
+						<div class="poto">
+							<p>
+								<img src="../../../img/teacher/course/poto.jpg" />
+							</p>
+						</div>
+						<p>李宝安</p>
+						<em>564</em>
+					</li>
+				</ul>
+				<h3>组1</h3>
+				<ul class="ranking_list">
+					<li>
+						<span class="one"></span>
+						<div class="poto">
+							<p>
+								<img src="../../../img/teacher/course/poto.jpg" />
+							</p>
+							<span class="crown"></span>
+						</div>
+						<p>小柒</p>
+						<em>198</em>
+					</li>
+					<li>
+						<span class="two"></span>
+						<div class="poto">
+							<p>
+								<img src="../../../img/teacher/course/poto.jpg" />
+							</p>
+						</div>
+						<p>康学峰</p>
+						<em>47667</em>
+					</li>
+					<li>
+						<span class="three"></span>
+						<div class="poto">
+							<p>
+								<img src="../../../img/teacher/course/poto.jpg" />
+							</p>
+						</div>
+						<p>刘孝原</p>
+						<em>765</em>
+					</li>
+					<li>
+						<span>4</span>
+						<div class="poto">
+							<p>
+								<img src="../../../img/teacher/course/poto.jpg" />
+							</p>
+						</div>
+						<p>李宝安</p>
+						<em>564</em>
+					</li>
+					<li>
+						<span>5</span>
+						<div class="poto">
+							<p>
+								<img src="../../../img/teacher/course/poto.jpg" />
+							</p>
+						</div>
+						<p>李宝安</p>
+						<em>564</em>
+					</li>
+				</ul>
+			</div>
+		</article>
+		        -->
+		<article id="rankList" class="lesson_integration bodyBg-fff tm_display_no">
+			<div class="statistics_tab_two_column_box tm_display_no">
+				<ul class="statistics_tab_two_column">
+					<li data="all" class="hig">全班排名</li>
+					<li data="group">小组排名</li>
+				</ul>
+			</div>
+			<div>
+				<div id="allClassRankList" class="statistics_ranking_list">
+					<ul class="ranking_list">
+					<!--<h3>组1</h3>
+						<li>
+							<span class="one"></span>
+							<div class="poto">
+								<p>
+									<img src="../../../img/teacher/course/poto.jpg" />
+								</p>
+								<span class="crown"></span>
+							</div>
+							<p>小柒</p>
+							<em>198</em>
+						</li>
+						-->
+					</ul>
+				</div>
+				<div id="groupClassRankList" class="statistics_ranking_list tm_display_no">
+				</div>
+			</div>
+		</article>
+	</body>
+
+</html>

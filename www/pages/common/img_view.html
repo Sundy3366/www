@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>爱学图片预览</title>
+		<style type="text/css">
+			html,body{
+				margin: 0;
+				border: 0;
+			}
+			body{
+				background-color: #000000;
+			}
+			.imgContainer{
+				text-align: center;
+    			width: 100%;
+			}
+			img{
+			    display: inline-block;
+			}
+		</style>
+	</head>
+	<body ><!-- onclick="goBackNow(-1,false)" ondblclick="preViewImgLarge()"-->
+		<div class="imgContainer">
+			<img id="preViewImg" style="display: none;"/>
+		</div>
+		<script type="text/javascript" src="../../js/common/touch-0.2.14.min.js" ></script>
+		<script type="text/javascript">
+			/**
+			 * 从url中获取传入参数 
+			 */
+			function getQueryStringFromUrl(){
+				var url = document.location.href;
+				var queryString = url.substring(url.indexOf("?")+1);
+				return getParam2Json(queryString);
+			}
+			/**
+			 * get 方式的参数转为json串
+			 * @param {String} getStr e.g.:data=a&data2=b	若参数中存在url地址,并且url地址中有&符,则需要将该url做encodeURIComponent
+			 * 输出参数 jsonObject
+			 * @author xuefeng.kang 
+			 */
+			function getParam2Json(getStr){
+				var jsonObj = {};
+				var getStrs = getStr.split("&");
+				for(var str in getStrs){
+					var equToIndex = getStrs[str].indexOf("=");
+					jsonObj[getStrs[str].substring(0,equToIndex)]=getStrs[str].substring(equToIndex+1);
+				}
+				return jsonObj;
+			}
+			//该返回是h5界面主动调用js方法进行返回的
+			function goBackNow(type,isRefresh){
+				if(!type)
+					type = -1;
+				if(isRefresh == undefined)
+					isRefresh = true;
+				var msg = "://returnNow?type="+type+"&isRefresh="+isRefresh;
+				sendMsg2iOS(msg);
+			}
+			/**
+			 * 给iOS发送消息,纯消息无跳转
+			 * @param {Object} url ,发送的Url
+			 */
+			function sendMsg2iOS(url){
+				var iframe = document.createElement("iframe");
+				iframe.setAttribute("id","reqSignIframe");
+				iframe.setAttribute("style","display:none");
+				iframe.setAttribute("src",url);
+				document.body.appendChild(iframe);			
+			}
+			/**
+			 * 双击放大
+			 */
+			function preViewImgLarge(){
+				var preViewImg = document.getElementById("preViewImg");
+					preViewImg.style.marginTop = 0;
+				if(preViewImg.style.width=="100%"){//缩小
+					preViewImg.style.width="";
+				}else{//放大
+					preViewImg.style.width="100%";
+					preViewImg.style.height = "auto";
+				}
+				if(preViewImg.parentElement.offsetHeight<document.documentElement.clientHeight)
+						preViewImg.style.marginTop = (document.documentElement.clientHeight-preViewImg.height)/2+"px";
+			}
+			
+			var imgSrc = getQueryStringFromUrl().imgSrc;
+			if(!imgSrc){
+				goBackNow(-1,false);
+			}else{
+				imgSrc = decodeURIComponent(decodeURIComponent(imgSrc));
+				if(imgSrc.indexOf("://head")!=-1)
+					imgSrc = imgSrc.split("://head")[0];
+				var preViewImg = document.getElementById("preViewImg");
+				preViewImg.onload=function(){
+//					if(preViewImg.width>document.documentElement.clientWidth){
+						preViewImg.style.width = "100%";
+						preViewImg.style.height = "auto";
+//					}
+					preViewImg.style.display="inline-block";
+					if(preViewImg.parentElement.offsetHeight<document.documentElement.clientHeight){
+						preViewImg.style.marginTop = (document.documentElement.clientHeight-preViewImg.height)/2+"px";
+					}
+				};
+				preViewImg.onerror=function(){
+					document.body.style.height=document.documentElement.clientHeight+"px";
+				};
+				preViewImg.src = imgSrc;//+"?_="+new Date().getTime();
+			}
+			(function(){
+				//body双击
+				touch.on(document.body,'tap doubletap',function(ev){
+					if(ev.type=="tap"){
+						goBackNow(-1,false);
+					}else if(ev.type=="doubletap"){
+						preViewImgLarge();
+					}
+				});
+			})();
+		</script>
+	</body>
+</html>

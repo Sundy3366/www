@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/common/public.css" />
+		<link rel="stylesheet" href="../../css/parent/parent.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common/idangerous.swiper.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/parent/independence_student.css"/>
+	</head>
+
+	<body>
+		<!--
+			白色背景调用 bodyBg-fff
+			彩色背景调用 bodyBg-f2f6f9
+		-->
+		<header class="titleBarHeader" style="display: block;">
+			<span class="returnBackSpan" onclick="javascript:goBackNow();"></span>
+			<span class="title">
+				<span class="f0">
+					<div class="f0">
+						<!--
+							选中时,span上添加hig,同时在subRadius上添加hig
+						-->
+						<div class="report_tab_container">
+							<div class="subRadius left hig"></div>
+							<div name="reportTab" class="main">
+								<span idx="0" data="1" class="hig" fn="initIndependenceStudy(1)">周报</span>
+								<span idx="1" data="2" fn="initIndependenceStudy(2)">月报</span>
+							</div>
+							<div class="subRadius right"></div>
+						</div>
+					</div>
+				</span>
+			</span>
+		</header>
+		<div >
+			<article class="pieSlideArt" style="display: none;">
+				<div class="swiper-container">
+					<div class="swiper-wrapper" id="pieSliderList">
+						<!--<div class="unitBox swiper-slide"><span class="slipe_mini"><div>10.01<p>~</p>10.07</div></span></div>
+						<div class="unitBox swiper-slide"><span class="slipe_mini"><div>10.01<p>~</p>10.07</div></span></div>
+						<div class="unitBox swiper-slide"><span class="slipe_mini"><div>10.01<p>~</p>10.07</div></span></div>
+						<div class="unitBox swiper-slide"><span class="slipe_middle hig"><div>10.08<p>~</p>10.15</div></span></div>
+						<div class="unitBox swiper-slide"><span class="slipe_center"><div>10.16<p>~</p>10.22</div></span></div>-->
+					</div>
+				</div>
+			</article>
+		</div>
+		<article id="noDataZW" style="display: none;margin-top: 50%;">
+			<div class="study_report_zwt1"></div>
+		</article>
+		<article id="noStudyZW" style="display: none;height:calc(90% - 179px);margin-top: 10%;">
+			<div class="study_report_zwt2" style="height: 100%;"></div>
+		</article>
+		<article id="errorZW" style="display: none;height:calc(90% - 179px);margin-top: 10%;">
+			<div class="study_report_err" style="height: 100%;"></div>
+		</article>
+		<div id="independentStudentBox" class="independent_student_box" style="display: none;height:calc(100% - 179px);overflow-y: auto;">
+			<h2 class="title">登录天数：<span id="valueInfo1"></span></h2>
+			<ul class="student_list">
+				<li class="" style="display: none;">
+					<!--不能点击时添加   desible -->
+					<span class="icon_pub zaixianban_icon"></span>
+					<div class="list_con">
+						<h3>在线班学习</h3>
+						<p>完成作业<span id="valueInfo2"></span>项</p>
+					</div>
+				</li>
+				<li > <!--class="desible"-->
+					<span class="icon_pub biaoce_icon"></span>
+					<div class="list_con">
+						<h3>测试<span id="valueInfo3"></span>次</h3>
+						<p>测试题数<span id="valueInfo5"></span>道（客观题<span id="valueInfo6"></span>道，答错<span id="valueInfo7"></span>道）</p>
+					</div>
+				</li>
+				<li class="">
+					<span class="icon_pub gaoqing_icon"></span>
+					<div class="list_con">
+						<h3>高清课堂</h3>
+						<p>学习<span id="valueInfo8"></span>节</p>
+					</div>
+				</li>
+				<li class="">
+					<span class="icon_pub daoxue_icon"></span>
+					<div class="list_con">
+						<h3>知识导学</h3>
+						<p>学习<span id="valueInfo9"></span>次</p>
+					</div>
+				</li>
+				<li class="">
+					<span class="icon_pub zhibo_icon"></span>
+					<div class="list_con">
+						<h3>直播课</h3>
+						<p>参加<span id="valueInfo11"></span>节（共<span id="valueInfo10"></span>节），观看录播<span id="valueInfo12"></span>节</p>
+					</div>
+				</li>
+				<li class="">
+					<span class="icon_pub hubang_icon"></span>
+					<div class="list_con">
+						<h3>互帮互学</h3>
+						<p>提问<span id="valueInfo13"></span>次，回答<span id="valueInfo14"></span>次</p>
+					</div>
+				</li>
+				<li class="">
+					<span class="icon_pub danci_icon"></span>
+					<div class="list_con">
+						<h3>天天单词</h3>
+						<p>掌握单词<span id="valueInfo15"></span>个，完成任务<span id="valueInfo16"></span>项，参与擂台<span id="valueInfo17"></span>次（胜利<span id="valueInfo18"></span>次）</p>
+					</div>
+				</li>
+				<li class="">
+					<span class="icon_pub zuowen_icon"></span>
+					<div class="list_con">
+						<h3>作文天地</h3>
+						<p>写作文<span id="valueInfo19"></span>篇，大赛投稿<span id="valueInfo20"></span>篇，<span id="valueInfo21"></span>篇获奖</p>
+					</div>
+				</li>
+				<li class="">
+					<span class="icon_pub zhandui_icon"></span>
+					<div class="list_con">
+						<h3>学习战队</h3>
+						<p>本周贡献值<span id="valueInfo22"></span></p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript" src="../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../js/common/idangerous.swiper.min.js"></script> 
+		<script type="text/javascript" src="../../js/parent/parent_report.js" ></script>
+		<script>
+			var mySwiper; 
+			$(function(){
+				initIndependenceStudy(1);
+				changeTabClickListen();
+			})
+		</script>
+	</body>
+
+</html>

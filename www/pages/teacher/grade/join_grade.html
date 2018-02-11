@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../../css/common/public.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/teacher/join_grade.css"/>
+	</head>
+	<body class="bgcF3F6F8">
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span class="title">
+				<span class="f0">
+					<span class="f36_2">加入班级</span>
+				</span>
+			</span>
+			<span class="right f0">
+				<span></span>
+			</span>
+		</header>
+		<a href="" id="a0">
+			<li class="jg_li bgcFFFFFF pub_margin_top10">
+				<img src="../../../img/teacher/grade/content_join_invitation_code@2x.png" class="jg_img1"/>
+				<p class="f32_2 colorf1 jg_p">通过邀请码加入班级</p>
+				<img src="../../../img/teacher/teacherMain/content_my_lessons_arrow@2x.png" class="jg_img2"/>
+			</li>
+		</a>
+		<a href="" style="display: none;" id="a1">
+			<li class="jg_li bgcFFFFFF pub_margin_top15">
+				<img src="../../../img/teacher/grade/content_find_calss_by_school@2x.png" class="jg_img1"/>
+				<p class="f32_2 colorf1 jg_p">按学校查找班级</p>
+				<img src="../../../img/teacher/teacherMain/content_my_lessons_arrow@2x.png" class="jg_img2"/>
+			</li>
+		</a>
+		<a style="display: none;" id="a2" onclick="findClass(this,'1')">
+			<li class="jg_li bgcFFFFFF pub_margin_top15">
+				<img src="../../../img/teacher/grade/content_find_calss_by_school@2x.png" class="jg_img1"/>
+				<p id="schoolName" class="f32_2 colorf1 jg_p"></p>
+				<img src="../../../img/teacher/teacherMain/content_my_lessons_arrow@2x.png" class="jg_img2"/>
+			</li>
+		</a>
+		<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/join_grade.js" ></script>
+		<script>
+			$(function(){
+				if(getLocalStorageItem(webStorageVars[5])==commonSchoolId && getLocalStorageItem(webStorageVars[6])=="0"){
+					$("#a1").show();
+				}else{
+					$("#a2").show();
+					$("#schoolName").text(getLocalStorageItem(webStorageVars[8]));
+				}
+				var href='join_grade_code.html';
+				var href1='join_grade_school.html';
+				if(!isH5Only){
+					href+='://head?title=[加入班级,false,,]&rightHandle:[isExist:true,type:type2,value:[[完成,joinClassInviteCommit,]]]';
+					document.getElementById("a0").href=href;
+					href1+='://head?title=[选学校,false,,]&rightHandle:[isExist:false]';
+					document.getElementById("a1").href=href1;
+				}else{
+					document.getElementById("a0").href=href;
+					document.getElementById("a1").href=href1;
+				}
+			});
+			goBack();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/common/public.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/teacher/teacher_main.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/teacher/grade.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/teacher/join_grade.css"/>
+	</head>
+	<body class="bgcF3F6F8">
+		<div class="tm_head_bg" id = "teaherHeadDiv">
+			<!-- 跳转到设置页 -->
+			<div class="tm_to_config">
+				<img src="../../img/teacher/teacherMain/index_set@2x.png" class="tm_to_config_icon"/>
+			</div>
+			<div class="tm_head_bg_2">
+				<img src="../../img/teacher/teacherMain/self_image.png" class="tm_head_img"/>
+				<div class="tm_head_name"></div>
+			</div>
+		</div>
+		<div id="generalCourse" class="tm_menu_div1 bgcFFFFFF tm_display_no">
+			<div class="tm_menu_div2">
+				<a href=""
+					onclick="javascript:var href='grade/manage.html'; if(!isH5Only) href+='://head?title=[班级管理,false,,]&rightHandle:[isExist:false]'; this.href=href;">
+					<div class="tm_menu_bjgl_div">
+						<img class="tm_width1" src="../../img/teacher/teacherMain/content_class_management_ic@2x.png"/>
+						<div class="tm_font1">班级管理</div>
+					</div>
+				</a>
+				<div class="tm_menu_bjq_div" onclick="toClassLoop();">
+					<img class="tm_width1" src="../../img/teacher/teacherMain/content_class_circle_ic@2x.png"/>
+					<div class="tm_font1">班级圈</div>
+				</div>
+				<div class="tm_menu_bjq_div" onclick="toClassNotice();">
+					<img class="tm_width1" src="../../img/teacher/teacherMain/content_class_notice_ic@2x.png"/>
+					<span name="classNoticeRedTip" class="tm_menu_red_tip tm_display_no"></span>
+					<div class="tm_font1">班级通知</div>
+				</div>
+				<div class="tm_menu_xngg_div" onclick="toSchoolNotice();">
+					<img class="tm_width1" src="../../img/teacher/teacherMain/content_campus_bulletin_ic@2x.png"/>	
+					<span id="redTip" class="tm_menu_red_tip tm_display" hidden="hidden"></span>
+					<div class="tm_font1">校内公告</div>
+				</div>
+			</div>
+		</div>
+		<ul id="realCourse" class="tm_menu_real_ul bgcFFFFFF tm_display_no">
+			<li class="tm_menu_real_li1" onclick="gotoCourseList()">
+				<img src="../../img/teacher/teacherMain/content_my_course_ic@2x.png" class="tm_menu_real_img"/>
+				<p class="tm_menu_real_p">我的课程</p>
+			</li>
+			<li class="tm_menu_real_li2" onclick="toClassNotice();">
+				<img src="../../img/teacher/teacherMain/content_class_notice_ic@2x.png" class="tm_menu_real_img"/>
+				<span name="classNoticeRedTip" class="tm_menu_red_tip tm_display" hidden="hidden"></span>
+				<p class="tm_menu_real_p">班级通知</p>
+			</li>
+		</ul>
+		<ul id="onlineCourse" class="tm_menu_real_ul bgcFFFFFF tm_display_no">
+			<li class="tm_menu_online_li1" onclick="gotoCourseList()">
+				<img src="../../img/teacher/teacherMain/content_my_course_ic@2x.png" class="tm_menu_real_img"/>
+				<p class="tm_menu_real_p">我的课程</p>
+			</li>
+			<li class="tm_menu_online_li1" onclick="gotoCourseList()">
+				<img src="../../img/teacher/teacherMain/content_my_lessons_arrow@2x.png" class="tm_menu_online_img1"/>
+			</li>
+		</ul>
+		<div id="generalMyCourse" class="tm_display_no bgcFFFFFF">
+			<div class="tm_course_div1"></div>
+			<div class="tm_course_div2" onclick="gotoCourseList()">
+				<div class="tm_course_div3">
+					<div class="tm_course_div4">我的课程</div>
+					<div class="tm_float_right">
+						<img class="tm_course_img1" src="../../img/teacher/teacherMain/content_my_lessons@2x.png"/>
+						<img class="tm_course_img2" src="../../img/teacher/teacherMain/content_my_lessons_arrow@2x.png"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="taskList" class="tm_display_no bgcFFFFFF">
+			<div class="tm_task_div1">
+				<div class="tm_task_div2">最近任务</div>
+			</div>
+			<ul id="taskListDetail" class="tm_margin_left">
+				<!--<li class="tm_task_li">
+					<div class="tm_float_left">
+						<div class="tm_task_name">任务名称任务名称米密密麻麻密密ddssss</div>
+						<div>
+							<div class="tm_task_time1">剩余</div>
+							<div class="tm_task_time2">3小时</div>
+						</div>
+					</div>
+					<div class="tm_task_div3">
+						<div class="tm_task_div4">待批阅</div>
+						<div>
+							<div class="tm_task_time1">62/70</div>
+							<img class="tm_task_img" src="../../img/teacher/teacherMain/content_default_avatar@2x.png"/>
+						</div>
+					</div>
+				</li>
+				<li class="tm_task_li">
+					<div class="tm_float_left">
+						<div class="tm_task_name">任务名称任务名称</div>
+						<div>
+							<div class="tm_task_time1">剩余</div>
+							<div class="tm_task_time1">3小时</div>
+						</div>
+					</div>
+					<div class="tm_task_div3">
+						<div class="tm_margin_top">
+							<div class="tm_task_time1">62/70</div>
+							<img class="tm_task_img" src="../../img/teacher/teacherMain/content_default_avatar@2x.png"/>
+						</div>
+					</div>
+				</li>
+				<li class="tm_task_li">
+					<div class="tm_float_left">
+						<div class="tm_task_name">任务名称任务名称</div>
+						<div>
+							<div class="tm_task_time1">剩余</div>
+							<div class="tm_task_time1">3小时</div>
+						</div>
+					</div>
+					<div class="tm_task_div3">
+						<div class="tm_margin_top"> 
+							<div class="tm_task_time1">62/70</div>
+							<img class="tm_task_img" src="../../img/teacher/teacherMain/content_default_avatar@2x.png"/>
+						</div>
+					</div>
+				</li>
+				<li class="tm_task_li">
+					<div class="tm_float_left">
+						<div class="tm_task_name">任务名称任务名称</div>
+						<div>
+							<div class="tm_task_time1">剩余</div>
+							<div class="tm_task_time1">3小时</div>
+						</div>
+					</div>
+					<div class="tm_task_div3">
+						<div class="tm_task_div4">待批阅</div>
+						<div>
+							<div class="tm_task_time1">62/70</div>
+							<img class="tm_task_img" src="../../img/teacher/teacherMain/content_default_avatar@2x.png"/>
+						</div>
+					</div>
+				</li>-->
+			</ul>
+		</div>
+		<div id="placeholder" class="tm_no_grade tm_display_no">
+			<div>
+				<img class="tm_no_grade_img1" src="../../img/teacher/teacherMain/teacher_home_placeholder.png"/>
+			</div>
+			<a id="teacherAddClassBtn" href=""
+					onclick="javascript:var href='grade/manage.html'; if(!isH5Only) href+='://head?title=[班级管理,false,,]&rightHandle:[isExist:false]'; this.href=href;">
+				<div>
+					<img class="tm_width2" src="../../img/teacher/teacherMain/content_btn_join_class_default@2x.png"/>
+				</div>
+			</a>
+		</div>
+		<!--没有班级是出现的提示框-->
+		<!--<div class="jpcc_sel_div jpcc_display">
+			<div class="bgo40"></div>
+			<div class="jpcc_sel_content">
+				<div class="jpcc_sel_head_div">
+					<div id="hign" class="jpcc_sel_head_font f32_2 colorf2">您还没有加入班级呢</div>
+				</div>
+				<div class="jpcl_sel_footer">
+					<div class="jpcc_sel_cancel f32_2 colorf2 jpcl_sel_border_right" onclick="javascript:$('.jpcc_sel_div').hide();">取消</div>
+					<div class="jpcc_sel_cancel f32_2 colorf6" onclick="gradeSure();">加入班级</div>
+				</div>
+			</div>
+		</div>-->
+		<!--没有班级是出现的提示框-->
+		<div class="delMemberDiv">
+			<div class="bgo40"></div>
+			<div class="content">
+				<div class="info" style="text-align: center;">
+					<header>您还没有加入班级呢～</header>
+					<div class="options"></div>
+				</div>
+				<div class="operate" style="height: 40px;">
+					<span onclick="javascript:$('.delMemberDiv').hide();">取消</span>
+					<span onclick="toClassManage();">加入班级</span>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../js/teacher/join_grade.js" ></script>
+		<script type="text/javascript" src="../../js/teacher/teacher_main.js" ></script>
+		<script type="text/javascript" src="../../js/teacher/courses.js" ></script>
+		<script>
+			if(!isH5Only){
+					//获取传过来的参数
+					var strParam = getQueryStringFromUrl();
+					if(strParam.jid){
+						var jid = strParam.jid;
+						var photo = strParam.photo;
+						var userName = decodeURIComponent(strParam.userName);
+						var schoolId = strParam.schoolId;
+						var hasClass = strParam.hasClass;
+						var uType = strParam.uType;
+						var schoolName = decodeURIComponent(strParam.schoolName);
+						var realName = strParam.realName?decodeURIComponent(strParam.realName):"";
+							if(realName=="未填")
+								realName = "";
+						saveLocalStorageItem(webStorageVars[2],jid);
+						saveLocalStorageItem(webStorageVars[3],photo);
+						saveLocalStorageItem(webStorageVars[4],userName);
+						saveLocalStorageItem(webStorageVars[5],schoolId);
+						saveLocalStorageItem(webStorageVars[6],hasClass);
+						saveLocalStorageItem(webStorageVars[7],uType);
+						saveLocalStorageItem(webStorageVars[8],schoolName);
+						saveLocalStorageItem(webStorageVars[24],realName);
+					}
+				}else{
+					var jid = "2765718";
+					var photo = "http://attach.etiantian.com/common/cooperateschool/teacher/upload/default_head.jpg";
+					var userName = "盖聂渊虹";
+					var schoolId = "51005";//"51005";
+					var hasClass = "1";
+					var uType = "1";
+					var schoolName = "测试北京分校910";
+					if(testServerFlag=="A"){
+//						jid = "3079360";//2766717(扦珑) 2765718(盖聂渊虹)
+						jid = "3140053";//
+//						userName = "T800@ett.com";//"盖聂渊虹";
+						userName = "邓老师666";//"邓老师666";
+//						jid = "2765718";//2766717(扦珑) 2765718(盖聂渊虹)
+//						userName = "盖聂渊虹";
+						photo = "http://attach.etiantian.com/common/cooperateschool/teacher/upload/3079360_82086339.png";
+//						schoolId = "50043";//51005
+                        schoolId=  50040;
+						hasClass = "1";
+						uType = "1";
+						schoolName = "大连分校910";
+					}
+					saveLocalStorageItem(webStorageVars[2],jid);
+					saveLocalStorageItem(webStorageVars[3],photo);
+					saveLocalStorageItem(webStorageVars[4],userName);
+					saveLocalStorageItem(webStorageVars[5],schoolId);
+					saveLocalStorageItem(webStorageVars[6],hasClass);
+					saveLocalStorageItem(webStorageVars[7],uType);
+					saveLocalStorageItem(webStorageVars[8],schoolName);
+				}
+				//校验是否存在通知
+				if(getLocalStorageItem(webStorageVars[23]) == '{"'+jid+'":true}')
+					$("[name=classNoticeRedTip]").show();
+				window.onload=function(){
+					showTeacherHead();
+					setTimeout(function () {
+						teacherMainInit();
+						$.ajaxSetup({
+							beforeSend: function (xhr) {
+								xhr.setRequestHeader("X-Requested-with", "XMLHttpRequest");
+							},
+							complete: function () {
+							}
+						});
+					},300);
+				};
+			var currClickTask;
+		</script>
+	</body>
+</html>

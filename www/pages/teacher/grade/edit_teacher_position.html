@@ -1,0 +1,115 @@
+<!--
+	作者：wdjx_123@sina.cn
+	时间：2016-01-28
+	描述：教师-编辑岗位
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title>爱学</title>
+		<link rel="stylesheet" href="../../../css/teacher/grade.css"/>
+		<link rel="stylesheet" href="../../../css/common/public.css"/>
+		<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/grade.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				initEditTeacherPosition();
+			});
+		</script>
+	</head>
+	<body class="f36_2">
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span class="title">
+				<div class="f0">
+					<span class="f36_2">编辑岗位</span>
+				</div>
+			</span>
+			<span class="right f0 minWidth66">
+				<span class="headerOkBtn" onclick="manageClassMemeberSubmit('edit')">完成</span>
+			</span>
+		</header>
+		<article class="editPosition">
+			<div class="editPositionHeader">
+				<span class="line"></span>
+				<span class="headerContainer">
+					<span class="subjectIcon"></span>
+					<span class="headerText">任教学科</span>
+				</span>
+				<span class="line"></span>
+			</div>
+			<div class="subjectList">
+				<ul>
+					<li>
+						<span data="1">语文</span><!--class="selected"-->
+					</li>
+					<li>
+						<span data="2" >数学</span>
+					</li>
+					<li>
+						<span data="3" >英语</span>
+					</li>
+					<li>
+						<span data="4" >物理</span>
+					</li>
+					<li>
+						<span data="7" >生物</span>
+					</li>
+					<li>
+						<span data="5" >化学</span>
+					</li>
+					<li>
+						<span data="6" >历史</span>
+					</li>
+					<li>
+						<span data="8" >地理</span>
+					</li>
+					<li>
+						<span data="9" >政治</span>
+					</li>
+					<li>
+						<span data="10" >科学</span>
+					</li>
+					<li>
+						<span data="11" >其他</span>
+					</li>
+				</ul>
+				<div name="chooseMaster" class="opChoose">
+					<!--
+                    	作者：wdjx_123@sina.cn
+                    	时间：2016-01-28
+                    	描述：选中时该处class为choosed
+                    -->
+					<span class="chooseRight"></span>
+					<span class="f30_2 colorf2">设为本班班主任</span>
+				</div>
+				<!--
+                	作者：wdjx_123@sina.cn
+                	时间：2016-02-01
+                	描述：目前您为本班班主任显示
+                -->
+				<div name="isMasterInfo" class="info" style="display: none;">
+					<span class="infoIcon"></span>
+					<span class="f30_2 colorf2">目前您为本班班主任</span>
+				</div>
+			</div>
+		</article>
+		<div class="delMemberDiv">
+			<div class="bgo40"></div>
+			<div class="content">
+				<div class="info">
+					<header>您将失去班主任身份不能继续管理班级</header>
+					<div class="options">
+					</div>
+				</div>
+				<div class="operate">
+					<span name="submit">确定</span>
+					<span onclick="delMemberDialogClose()">取消</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

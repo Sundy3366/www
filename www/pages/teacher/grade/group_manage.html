@@ -1,0 +1,109 @@
+<!--
+	作者：wdjx_123@sina.cn
+	时间：2016-01-28
+	描述：小组管理
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title>爱学</title>
+		<link rel="stylesheet" href="../../../css/teacher/grade.css"/>
+		<link rel="stylesheet" href="../../../css/common/public.css"/>
+		<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../../js/common/touch-0.2.14.min.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/grade.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				//初始化小组列表信息
+				initSubjectGroupList();
+			});
+		</script>
+	</head>
+	<body class="bgcF3F6F8 colorf1">
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span id="changeClassTitle" class="title">
+				<span class="f0">
+					<div class="f0">
+						<span class="f36_2">&nbsp;</span>
+						<!--点击切换班级时使用 arrowUp-->
+						<span class="arrowDown" style="display: none;"></span>
+					</div>
+				</span>
+			</span>
+			<!--
+            	作者：wdjx_123@sina.cn
+            	时间：2016-01-27
+            	描述：头 右侧按钮位置
+            -->
+			<span class="right f0">
+				<!--
+                	描述：onclick="javascript:document.location.href = 'add_group.html?classId='+getQueryStringFromUrl().classId;"
+                -->
+				<span class="addGroupIcon" style="display: none;"></span>
+			</span>
+		</header>
+		<!--
+        	作者：wdjx_123@sina.cn
+        	时间：2016-01-23
+        	描述：班级切换弹出层
+        -->
+		<div id="changeClassDiv" class="changeClassesSec">
+			<div class="bgo40" onclick="changeClassClick();"></div>
+			<ul>
+				<!--<li>
+					<span class='space'></span>
+					<span class="f36_2 text">数学小组</span>
+				</li>
+				<li>-->
+					<!--
+                    	作者：wdjx_123@sina.cn
+                    	时间：2016-01-23
+                    	描述：选中时添加hover,未选时为space
+                    -->
+					<!--<span class='space hover'></span>
+					<span class="f36_2 text">语文小组</span>
+				</li>-->
+			</ul>
+		</div>
+		<div class="h15"></div>
+		<article class="groupManager" class="bgcFFFFFF">
+			<div>
+				<!--
+                	作者：wdjx_123@sina.cn
+                	时间：2016-01-28
+                	描述：无分组时使用<div class="groupManagerZW"></div>占位图,并用js设置body背景色为#FFFFFF
+                -->
+                <!--<div class="groupManagerZW"  style="display: none;"></div>-->
+				<ul class="groupsUl">
+					<!--<a href="group_detail.html"><li>
+							<span class="text">小组名A</span>
+							<span class="floatRight">
+								<span class="text">44人</span>
+								<span class="rightArrow"></span>
+							</span>
+					</li></a>
+					<a href="group_detail.html"><li>
+							<span class="text">小组名B</span>
+							<span class="floatRight">
+								<span class="text">3人</span>
+								<span class="rightArrow"></span>
+							</span>
+					</li></a>-->
+				</ul>
+			</div>
+		</article>
+		<div id="editContext" class="contextMenu">
+			<div class="bgo40"></div>
+			<div class="content">
+				<ul>
+					<li data="edit">编辑</li>
+					<li data="del">删除</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

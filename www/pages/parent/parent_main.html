@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/common/public.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/teacher/teacher_main.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/parent/parent.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common/idangerous.swiper.css" />
+	</head>
+	<body class="bodyBg-f2f6f9">
+		<!--
+			白色背景调用 bodyBg-fff
+			彩色背景调用 bodyBg-f2f6f9
+		-->
+		<div class="swiper-container">
+	  		<div class="swiper-wrapper">
+	  			<div class="swiper-slide">
+					<div class="tm_head_bg" id="toParentInfoDiv">
+						<!-- 跳转到设置页 -->
+						<div class="tm_to_config">
+							<img src="../../img/teacher/teacherMain/index_set@2x.png" class="tm_to_config_icon"/>
+						</div>
+						<div class="tm_head_bg_2">
+							<img src="../../img/teacher/teacherMain/public-head_img_160@2x.png" class="tm_head_img"/>
+							<div class="tm_head_name"></div>
+							<a id="parentHeadForwardIcon" href="javascript:void(0);" class="forward_icon_fff tm_display_no"
+								style="position: relative;top: -60px;float: right;"></a>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<ul class="icon60Pix_tex_list_box mt10Pix" onclick="toParentClassNotice();">
+						<li>
+							<span class="class_notice" style="position: relative;">
+								<div name="classNoticeRedTip" style="left: 30px;" class="tm_menu_red_tip tm_display_no"></div>
+							</span>
+							<p>班级通知</p>
+							<a href="javascript:void(0);" class="forward_icon_gray fr mt12Pix"></a>
+						</li>
+					</ul>
+				</div>
+				<div class="swiper-slide" id="studyReportEntranceDiv" style="display: none;">
+					<h3 id="childInfoHint" class="small_title_36h"></h3>
+					<ul class="icon60Pix_tex_list_box mt10Pix">
+						<li id="xnxxLi" onclick="gotoStudyReportPage(1)" style="display: none;">
+							<span class="school_learning"></span>
+							<p>校内学习</p>
+							<a class="edit" onclick="gotoNoFinishedHomeworkPage(1)">
+								<em id="schUnFinTaskNumEm">0</em>
+							</a>
+						</li>
+						<li id="kwbLi" onclick="gotoStudyReportPage(2)" style="display: none;">
+							<span class="extracurricular_classes"></span>
+							<p>课外班</p>
+							<a class="edit" onclick="gotoNoFinishedHomeworkPage(2)">
+								<em id="webUnFinTaskNumEm">0</em>
+							</a>
+						</li>
+						<li id="zzxxLi" onclick="gotoIndependenceStudyPage()" style="display: none;">
+							<span class="autonomous_learning"></span>
+							<p> 自主学习</p>
+						</li>
+					</ul>
+				</div>
+				<div class="swiper-slide">
+					<div class="erro_404" hidden="hidden"><img src="../../img/parent/load_fail@2x.png"/></div>
+					<div class="association_children" hidden="hidden">
+						<img src="../../img/parent/parent_content_associate_children_bg@2x.png"/>
+						<a href="javascript:void(0);" class="association_children_btn" onclick="relateChild();">
+							<img src="../../img/parent/parent_btn_associate_children_default@2x.png"/>
+						</a>
+					</div>
+				</div>
+				<div class="swiper-slide">
+                    <div class="intermediate_load"></div>
+                    <img class="intermediate_load_xiaonei" src="../../img/parent/xiaonei@2x.png" hidden="hidden"></img>
+                    <img class="intermediate_load_xiaowai" src="../../img/parent/xiaowai@2x.png" hidden="hidden"></img>
+					<div class="pull-to-refresh" hidden="hidden"></div>
+				</div>
+			</div>
+		</div>
+		<!-- 
+		<ul class="icon60Pix_tex_list_box mt10Pix" onclick="toParentClassNotice();">
+			<li>
+				<span class="class_notice"></span>
+				<p>班级通知</p>
+				<a href="javascript:void(0);" class="forward_icon_gray fr mt12Pix"></a>
+			</li>
+		</ul>
+		<h3 class="small_title_36h" hidden="hidden">小柒同学的学习报表</h3>
+		<ul class="icon60Pix_tex_list_box mt10Pix" hidden="hidden">
+			<li>
+				<span class="school_learning"></span>
+				<p>校内学习</p>
+				<a class="edit">
+					<em>0</em>
+				</a>
+			</li>
+			<li>
+				<span class="extracurricular_classes"></span>
+				<p>课外班</p>
+				<a class="edit">
+					<em>11</em>
+				</a>
+			</li>
+			<li>
+				<span class="autonomous_learning"></span>
+				<p>自主学习</p>
+			</li>
+		</ul>
+		<div class="erro_404" hidden="hidden"><img src="../../img/parent/load_fail@2x.png"/></div>
+		<div class="association_children" hidden="hidden">
+			<img src="../../img/parent/parent_content_associate_children_bg@2x.png"/>
+			<a href="javascript:void(0);" class="association_children_btn" onclick="relateChild();">
+				<img src="../../img/parent/parent_btn_associate_children_default@2x.png"/>
+			</a>
+		</div>
+		<div class="intermediate_load" hidden="hidden"></div>
+		-->
+		<div id="loadingDiv_" class="pull-to-refresh tm_display_no" ></div>
+		<script type="text/javascript" src="../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../js/common/idangerous.swiper.min.js"></script>
+		<script type="text/javascript" src="../../js/parent/parent_main.js" ></script>
+		<script>
+			if(!isH5Only){
+					//获取传过来的参数
+					var strParam = getQueryStringFromUrl();
+					if(strParam.jid){
+						var jid = strParam.jid;
+						var photo = strParam.photo;
+						var userName = decodeURIComponent(strParam.userName);
+						var schoolId = strParam.schoolId;
+						var uType = strParam.uType;
+						var realName = strParam.realName?decodeURIComponent(strParam.realName):"";
+						var childName = strParam.childName?decodeURIComponent(strParam.childName):"";
+						if(realName=="未填")
+							realName = "";
+						if(childName=="未绑定")
+							childName = "";
+						saveLocalStorageItem(webStorageVars[2],jid);
+						saveLocalStorageItem(webStorageVars[3],photo);
+						saveLocalStorageItem(webStorageVars[4],userName);
+						saveLocalStorageItem(webStorageVars[5],schoolId);
+						saveLocalStorageItem(webStorageVars[7],uType);
+						saveLocalStorageItem(webStorageVars[24],realName);
+						saveLocalStorageItem(webStorageVars[25],childName);
+					}
+				}else{
+					var jid = "2842022";
+					var photo = "http://attach.etiantian.com/common/parentschool/photo/default_head.jpg";
+					var userName = "少羽家长";
+					var schoolId = "51005";
+					var uType = "6";
+					saveLocalStorageItem(webStorageVars[2],jid);
+					saveLocalStorageItem(webStorageVars[3],photo);
+					saveLocalStorageItem(webStorageVars[4],userName);
+					saveLocalStorageItem(webStorageVars[5],schoolId);
+					saveLocalStorageItem(webStorageVars[7],uType);
+				}
+				//校验是否存在通知
+				if(getLocalStorageItem(webStorageVars[23]) == '{"'+jid+'":true}')
+					$("[name=classNoticeRedTip]").show();
+				window.onload=function(){
+					showParentHead();
+					setTimeout(function () {
+						parentMainInit();
+						mainUpHandle();
+					},300);
+				};
+		</script>
+	</body>
+</html>

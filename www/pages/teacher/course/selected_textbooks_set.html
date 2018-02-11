@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title>爱学</title>
+		<link rel="stylesheet" type="text/css" href="../../../css/common/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/teacher/course.css" />
+			<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/courses.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				initClassList4CreateLesson();
+				initAllDateSetting();
+			});
+		</script>
+	</head>
+
+	<body class="bodyBg-fff">
+		<!--
+			彩色背景调用 bodyBg-f2f6f9
+			白色背景调用 bodyBg-fff
+		-->
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span class="title">
+				<div class="f0">
+					<span class="f36_2">2/2</span>
+				</div>
+			</span>
+			<span class="right f0 minWidth66">
+				<span class="headerOkBtn" onclick="createLessonSubmit()">完成</span>
+			</span>
+		</header>
+		<article class="selected_textbooks">
+			<section class="intro_box">
+				<div class="intro">
+					<h3>简介(选填)</h3>
+					<div class="textarea_box">
+						<textarea id="lessonInfo" maxlength="200" rows="" cols=""></textarea>
+					</div>
+				</div>
+			</section>
+			<section class="class_set">
+				<h3>分配给</h3>
+				<div id="selectClassDiv" class="class_select">
+					<!--<a href="" class="hig">高一(1)班</a>
+					<a href="">高一(1)班</a>
+					<a href="">高一(1)班</a>-->
+				</div>
+			</section>
+			<section class="date_box">
+				<div class="title">
+					<h3>时间</h3>
+					<a href="javascript:;" name="fenbanSettingBtn" onclick="fenbanSettingToggle(this)">分班设置</a>
+					<!-- 点击之后 文字切换为   取消分班设置-->
+				</div>
+				<div id="allDateSettingDiv" class="class_con">
+					<div class="date_set_pub pb18Pix">
+						<span>开始：</span>
+						<div class="date_select">
+							<p ></p>
+							<input name="allDateSettingStart" type="datetime-local" oninput="dateInputForCreateLesson(this)"/>		
+						</div>
+					</div>
+					<div class="date_set_pub">
+						<span>结束：</span>
+						<div class="date_select">
+							<p></p>
+							<input name="allDateSettingEnd" type="datetime-local" oninput="dateInputForCreateLesson(this)"/>		
+						</div>
+					</div>	
+				</div>
+				<div id="fenbanSettingDiv" ><!--class="tm_display_no"-->
+					<!--
+					<div data="">
+						<div class="class_con">
+							<h2>高一(1)班</h2>
+							<div class="date_set_pub pb18Pix">
+								<span>开始：</span>
+								<div class="date_select">
+									<p>2016年2月10日38分</p>
+									<input type="datetime-local" />		
+								</div>
+							</div>
+							<div class="date_set_pub">
+								<span>结束：</span>
+								<div class="date_select">
+									<p>2016年2月10日38分</p>
+									<input type="datetime-local" />		
+								</div>
+							</div>	
+						</div>
+					</div>
+                    -->
+					<!--<div class="class_con">
+						<h2>高一(1)班</h2>
+						<div class="date_set_pub pb18Pix">
+							<span>开始：</span>
+							<div class="date_select">
+								<p>2016年2月10日38分</p>
+								<input type="datetime-local" />		
+							</div>
+						</div>
+						<div class="date_set_pub">
+							<span>结束：</span>
+							<div class="date_select">
+								<p>2016年2月10日38分</p>
+								<input type="datetime-local" />		
+							</div>
+						</div>	
+					</div>-->
+				</div>
+			</section>
+		</article>
+	</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no,date=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>网校</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/student/student.css" />
+	</head>
+
+	<body>
+
+		<article class="bodyBg-f2f6f9 bgPub_box">
+			<!--
+				白色背景调用 bodyBg-fff
+				彩色背景调用 bodyBg-f2f6f9
+			-->
+			<!-- banner -->
+			<section class="online_school_banner">
+				<img src="../../img/student/student_online_school_banner@2x.png" />
+			</section>
+			<!--  九宫格选择  -->
+			<section class="nine_squares_selection mb10Pix">
+				<ul>
+					<li onclick="toZhiBo();">
+						<span class="live_lesson"></span>
+						<h3>直播课</h3>
+					</li>
+					<li onclick="toDianBo();">
+						<span class="on_the_course"></span>
+						<h3>点播课</h3>
+					</li>
+					<li onclick="toCePing();">
+						<span class="online_exam"></span>
+						<h3>在线测评</h3>
+					</li>
+					<li class="shaishai" style="display: none" onclick="toShaiShai();" >
+						<span class="bask_in"></span>
+						<h3>晒晒</h3>
+					</li>
+					<li id="yuxiwangIcon" style="display: none" onclick="toYuXiWang();">
+						<span class="yuxiwang"></span>
+						<h3>预习王</h3>
+					</li>
+				</ul>
+			</section>
+			<!--  在线班	-->
+			<section id="onlineClass" hidden="hidden" class="w100Per_bgFff_borBottom pl4Per mb10Pix" onclick="toOnlineClass();">
+				<!--<h2 class="tex_title_16Pix_222_borBottom pb17Pix pt17Pix">在线班</h2>
+				<p class="tex_tips_14Pix_999 pb18Pix pt18Pix">近日暂无上课安排</p>-->
+			</section>
+			<!--  实体班	-->
+			<section id="realClass" hidden="hidden" class="w100Per_bgFff_borBottom pl4Per mb10Pix" onclick="toRealClass();">
+				<!--<h2 class="tex_title_16Pix_222_borBottom pb17Pix pt17Pix pr4Per">实体课 <span class="entity_class_task_icon">5</span></h2>
+				<div class="recent_classes">
+					<h3>最近上课时间：2016-02-13</h3>
+					<ul class="class_list">
+						<li>
+							<span class="language"></span>
+							14:30-15:00
+						</li>
+						<li>
+							<span class="math"></span>
+							14:30-15:00
+						</li>
+						<li>
+							<span class="english"></span>
+							14:30-15:00
+						</li>
+					</ul>
+				</div>-->
+			</section>
+			<!--  为你推荐	-->
+			<section class="bikanqingdan hidden w100Per_bgFff_borBottom">
+				<div class="pl4Per online_exam_recommend_name pr4Per">
+					<h2 class="tex_title_16Pix_222_borBottom pb17Pix pt17Pix">必看清单</h2>
+					<p class="tex_title_16Pix_222_borBottom pb17Pix pt17Pix" id="break_info">
+						<img src="../../img/student/student_online_school_updata.png">
+						换一批
+					</p>
+				</div>
+
+				<ul id="recommend" class="online_exam_recommend_list">
+
+					<!--<li class="">-->
+						<!--<div class="online_exam_recommend_list_pointer">-->
+							<!--<img class="online_exam_recommend_list_pointer_img" src="../../img/student/student_online_school_pointer.png"/>-->
+							<!--<div class="online_exam_recommend_list_pointer_list">-->
+								<!--<p class="online_exam_recommend_list_pointer_list_p">还没学到</p>-->
+								<!--<p class="online_exam_recommend_list_pointer_list_p">已经学过</p>-->
+								<!--<p class="online_exam_recommend_list_pointer_list_p">不感兴趣</p>-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<img src="../../img/student/student_online_school_banner@2x.png"/>-->
+						<!--<div class="con">-->
+							<!--<p class="con_text">点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题</p>-->
+							<!--<p class="con_btn"><span class="con_btn_1">数学</span><span class="con_btn_2">文档</span><span class="con_btn_r">120人练习</span></p>-->
+						<!--</div>-->
+						<!--<img class="online_exam_recommend_img_i" src="../../img/student/student_online_school_open.png">-->
+					<!--</li>-->
+					<!--<li>
+						<div class="online_exam_recommend_list_pointer">
+							<img class="online_exam_recommend_list_pointer_img" src="../../img/student/student_online_school_pointer.png"/>
+							<div class="online_exam_recommend_list_pointer_list">
+								<p class="online_exam_recommend_list_pointer_list_p">还没学到</p>
+								<p class="online_exam_recommend_list_pointer_list_p">已经学过</p>
+								<p class="online_exam_recommend_list_pointer_list_p">不感兴趣</p>
+							</div>
+						</div>
+						<img src="../../img/student/student_online_school_banner@2x.png"/>
+						<div class="con">
+							<p class="con_text">点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题</p>
+							<p><span>数学</span><span>文档</span><span>120人练习</span></p>
+						</div>
+					</li>
+					<li>
+						<div class="online_exam_recommend_list_pointer">
+							<img class="online_exam_recommend_list_pointer_img" src="../../img/student/student_online_school_pointer.png"/>
+							<div class="online_exam_recommend_list_pointer_list">
+								<p class="online_exam_recommend_list_pointer_list_p">还没学到</p>
+								<p class="online_exam_recommend_list_pointer_list_p">已经学过</p>
+								<p class="online_exam_recommend_list_pointer_list_p">不感兴趣</p>
+							</div>
+						</div>
+						<img src="../../img/student/student_online_school_banner@2x.png"/>
+						<div class="con">
+							<p class="con_text">点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题</p>
+							<p><span>数学</span><span>文档</span><span>120人练习</span></p>
+						</div>
+					</li>
+					<li>
+						<div class="online_exam_recommend_list_pointer">
+							<img class="online_exam_recommend_list_pointer_img" src="../../img/student/student_online_school_pointer.png"/>
+							<div class="online_exam_recommend_list_pointer_list">
+								<p class="online_exam_recommend_list_pointer_list_p">还没学到</p>
+								<p class="online_exam_recommend_list_pointer_list_p">已经学过</p>
+								<p class="online_exam_recommend_list_pointer_list_p">不感兴趣</p>
+							</div>
+						</div>
+						<img src="../../img/student/student_online_school_banner@2x.png"/>
+						<div class="con">
+							<p class="con_text">点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题</p>
+							<p><span>数学</span><span>文档</span></p>
+						</div>
+					</li>-->
+				</ul>
+			</section>
+		</article>
+		<div class="float_cue  hidden float_wangxiao">
+			<div class="float_cue_box">
+				<p class="float_cue_box_icon">×</p>
+				<img class="float_cue_box_pic" src="../../img/student/student_pop_dial.png"/>
+				<p class="float_cue_box_text">您今日免费微课观看次数已用完<br/>获取更多资源，<span>请播打400-661-666</span></p>
+			</div>
+		</div>
+		<div class="float_cue hidden float_shuxiao">
+			<div class="float_cue_box">
+				<p class="float_cue_box_icon">×</p>
+				<img class="float_cue_box_pic" src="../../img/student/student_pop_tom_study.png"/>
+				<p class="float_cue_box_text">您今日免费微课观看次数已用完<br/><span>欢迎明天继续学习</span></p>
+			</div>
+		</div>
+		<div class="float_cue hidden float_cen"></div>
+		<script type="text/javascript" src="../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../js/student/online_school.js" ></script>
+		<script type="text/javascript" src="../../js/common/fastclick.js"></script>
+		<script>
+			if(!isH5Only){
+						//获取传过来的参数
+						var strParam = getQueryStringFromUrl();
+						if(strParam.jid){
+							var jid = strParam.jid;
+//							var photo = strParam.photo;
+//							var userName = decodeURIComponent(strParam.userName);
+							var schoolId = strParam.schoolId;
+							var gradeId = strParam.gradeId;
+							var uType = strParam.uType;
+							var stuHasClass = strParam.stuHasClass;
+							var isFiveFour = strParam.isFiveFour;
+							isFiveFour = isFiveFour?parseInt(isFiveFour):0;
+							gradeId = gradeId?parseInt(gradeId):"";
+							/*
+							 * 预习王入口规则:
+							 * 1.有班级则显示
+							 * 2.预习王的入口需对小学生隐藏：非五四制的一到六年级的小学生 ，五四制的一到五年级的小学生
+							 * 		7:"小六", 8:"小五", 9:"小四", 10:"小三", 11:"小二",12:"小一"
+							 */
+							if(gradeId && ((!isFiveFour && gradeId<7) || (isFiveFour && gradeId<8))){
+//								$(".nine_squares_selection li").width("20%");
+								$("#yuxiwangIcon").show();
+								//符合要求的展示个性化列表页
+								$(".bikanqingdan").show();
+								loadgetResource("0");
+							}
+//							var schoolName = decodeURIComponent(strParam.schoolName);
+							saveLocalStorageItem(webStorageVars[2],jid);
+//							saveLocalStorageItem(webStorageVars[3],photo);
+//							saveLocalStorageItem(webStorageVars[4],userName);
+							saveLocalStorageItem(webStorageVars[5],schoolId);
+							saveLocalStorageItem(webStorageVars[22],gradeId);
+							saveLocalStorageItem(webStorageVars[7],uType);
+//							saveLocalStorageItem(webStorageVars[8],schoolName);
+						}
+					}else{
+	//					var jid = "2704470";
+	//					var photo = "http://attach.etiantian.com/common/cooperateschool/teacher/upload/default_head.jpg";
+	//					var userName = "yanlilier005";
+	//					var schoolId = "50040";
+	//					var hasClass = "1";
+	//					var uType = "1";
+	//					var schoolName = "测试北京分校910";
+//						var jid = "2765751";
+//						var photo = "http://attach.etiantian.com/ett20/study/common/uplo ad/2765751_45088244.jpg";
+//						var userName = "少羽";
+//						var schoolId = "51005";
+//						var gradeId = "1";
+//						var uType = "3";
+//						var schoolName = "全国公共学校";
+						var jid = "7878";
+//						var photo = "http://attach.etiantian.com/ett20/study/common/upload/2765751_45088244.jpg";
+//						var userName = "qiaoqiao500";
+						var schoolId = "51005";
+						var gradeId = "3";
+						var uType = "3";
+//						var schoolName = "全国公共学校";
+						saveLocalStorageItem(webStorageVars[2],jid);
+//						saveLocalStorageItem(webStorageVars[3],photo);
+//						saveLocalStorageItem(webStorageVars[4],userName);
+						saveLocalStorageItem(webStorageVars[5],schoolId);
+						saveLocalStorageItem(webStorageVars[22],gradeId);
+						saveLocalStorageItem(webStorageVars[7],uType);
+//						saveLocalStorageItem(webStorageVars[8],schoolName);
+			}
+			$(function(){
+				//请求参数
+				var jid = getLocalStorageItem(webStorageVars[2]);
+				var data="jid="+jid;
+				getSignCode(data,Config.getNetClassInfoUrl().split("?m=")[1],"getNetClassInfo_");
+				getSignCode(data,Config.getSquareClassCircleConfig().split("?m=")[1],"getSquareClassCircleConfig_");
+			});
+		</script>
+	</body>
+</html>

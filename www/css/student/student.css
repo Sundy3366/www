@@ -1,0 +1,362 @@
+/* 网校 首页*/
+.online_school_banner{
+	width: 100%;
+	height: auto;
+}
+.online_school_banner img{
+	width: 100%;
+	height: auto;
+}
+.nine_squares_selection{
+	height: 74px;
+	background: #fff;
+	overflow: hidden;
+	padding: 25px 5px;
+}
+.nine_squares_selection ul{
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	/*    float:left;*/
+}
+.nine_squares_selection li{
+	/*	position: absolute;*/
+	box-sizing: border-box;
+	text-align: center;
+	float:left;
+	width:25%;/*20%*/
+}
+
+.nine_squares_selection li span{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+}
+.nine_squares_selection li span.live_lesson{
+	background: url(../../img/student/content_live_lesson_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.nine_squares_selection li span.on_the_course{
+	background:url(../../img/student/content_on_the_course_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.nine_squares_selection li span.online_exam{
+	background:url(../../img/student/content_online_exam_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.nine_squares_selection li span.bask_in{
+	background:url(../../img/student/content_bask_in_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.nine_squares_selection li span.yuxiwang{
+	background:url(../../img/student/preview_the_king_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.nine_squares_selection li h3{
+	line-height: 40px;
+	font-size: 15px;
+	color: #222;
+	font-weight: normal;
+}
+.recent_classes{
+	width: 100%;
+	padding: 18px 0;
+	overflow: hidden;
+}
+.recent_classes h3{
+	font-size: 14px;
+	color: #666;
+	padding-bottom: 4px;
+	font-weight: normal;
+}
+.recent_classes .class_list{
+	width: 100%;
+	overflow: hidden;
+}
+.recent_classes .class_list li{
+	float: left;
+	width: 50%;
+	height: 16px;
+	box-sizing: border-box;
+	margin-top: 11px;
+}
+.recent_classes .class_list li span{
+	float: left;
+	display: block;
+	width: 34px;
+	height: 16px;
+}
+.recent_classes .class_list li span.language{
+	background: url(../../img/student/student_entity_class_china@2x.png) no-repeat;
+	background-size: auto 100%;
+}
+.recent_classes .class_list li span.math{
+	background:url(../../img/student/student_entity_class_mathematics@2x.png) no-repeat;
+	background-size: auto 100%;
+}
+.recent_classes .class_list li span.english{
+	background:url(../../img/student/student_entity_class_english@2x.png) no-repeat;
+	background-size: auto 100%;
+}
+.recent_classes .class_list li span.physics{
+	background:url(../../img/student/student_entity_class_Physics@2x.png) no-repeat;
+	background-size: auto 100%;
+}
+.recent_classes .class_list li span.chemistry{
+	background:url(../../img/student/student_entity_class_Chemistry@2x.png) no-repeat;
+	background-size: auto 100%;
+}
+.recent_classes .class_list li span.history{
+	background:url(../../img/student/student_entity_class_history@2x.png) no-repeat;
+	background-size: auto 100%;
+}
+.recent_classes .class_list li span.biology{
+	background:url(../../img/student/student_entity_class_Biology@2x.png) no-repeat;
+	background-size: auto 100%;
+}
+.recent_classes .class_list li span.geography{
+	background:url(../../img/student/student_entity_class_Geography@2x.png) no-repeat;
+	background-size: auto 100%;
+}
+.recent_classes .class_list li span.politics{
+	background:url(../../img/student/student_entity_class_Politics@2x.png) no-repeat;
+	background-size: auto 100%;
+}
+.recent_classes .class_list li span.science{
+	background:url(../../img/student/student_entity_class_science@2x.png) no-repeat;
+	background-size: auto 100%;
+}
+.recent_classes .class_list li span.others{
+	background:url(../../img/student/student_entity_class_others@2x.png) no-repeat;
+	background-size: auto 100%;
+}
+.online_exam_recommend_list{
+	width: 100%;
+	overflow: hidden;
+	background: #fff;
+}
+.recommend_nullImg{
+	width: 200px;
+	position: relative;
+	left: 50%;
+	margin-left: -100px;
+	top: 60px;
+}
+.online_exam_recommend_list li{
+	position: relative;
+	height: 82px;
+	padding:15px 4% 15px 4% ;
+	border-bottom: 1px solid #DCDCDC;
+	margin-bottom: 10px;
+	background:#fff;
+	/*overflow: hidden;*/
+}
+.online_exam_recommend_list li:last-child{ border-bottom: none;}
+.online_exam_recommend_list li img{
+	float: left;
+	display: block;
+	width: 116px;
+	height: 72px;
+}
+.online_exam_recommend_list li .con{
+	width: 95%;
+	padding-left: 126px;
+	box-sizing: border-box;
+
+}
+.online_exam_recommend_list li .con .con_text{
+	height: 37px;
+	font-size: 13px;
+	color: #444;
+	margin-top: 5px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+.online_exam_recommend_list li .con .con_btn{
+	overflow: hidden;
+	margin-top: 7px;
+}
+.online_exam_recommend_list li .con span{
+	width:45px;
+	height:18px;
+	font-size: 10px;
+	color: #888;
+	line-height: 18px;
+	border:1px solid #ccc;
+	border-radius: 3px;
+	display: inline-block;
+	text-align: center;
+	margin-right: 10px;
+	float: left;
+}
+.online_exam_recommend_list li .con .con_btn_2{
+	margin-right: 0;
+}
+.online_exam_recommend_list li .con .con_btn .con_btn_r{
+	width:auto;
+	height:18px;
+	font-size: 10px;
+	color: #888;
+	line-height: 18px;
+	border:0px solid #ccc;
+	display: inline-block;
+	float: right;
+	margin:0;
+}
+.tm_menu_red_tip{
+	top: 5px;
+	width: 10px;
+	height: 10px;
+	left: 26px;
+}
+.swiper-slide span:nth-child(2n) .tm_menu_red_tip{
+	left: 63px;
+}
+.sortIcon{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+	background: url(../../img/student/nav-_btn_sort@2x.png) no-repeat center center;
+	background-size:100% ;
+}
+.more_small_popup_windows li p.subjectSortIcon{
+	background: url(../../img/student/nav_btn_subject_sort@2x.png) no-repeat left center ;
+	background-size: auto 100%;
+}
+.more_small_popup_windows li p.timeSortIcon{
+	background: url(../../img/student/nav_content_time_sort@2x.png) no-repeat left center ;
+	background-size: auto 100%;
+}
+/*新增的为你推荐模块*/
+.online_exam_recommend_list_pointer{
+	position: absolute;
+	right:0px;
+	top:0px;
+	height:36px;
+	width:40px;
+	z-index: 99;
+}
+.online_exam_recommend_list_pointer .online_exam_recommend_list_pointer_img{
+	float: none;
+	position: absolute;
+	right:0px;
+	top:0px;
+	height:auto;
+	width:16px;
+	padding:10px 15px 10px 10px;
+	z-index: 100;
+}
+.online_exam_recommend_list_pointer_list{
+	position: absolute;
+	right:15px;
+	top:23px;
+	box-shadow: 0px 0px 2px #999;
+	display: none;
+	z-index: 99;
+}
+.online_exam_recommend_list_pointer_list_p{
+	font-size: 14px;
+	height:30px;
+	line-height: 30px;
+	width:86px;
+	background:#fff;
+	text-align: center;
+	border:1px solid transparent;
+	border-right-color:#ccc;
+	border-bottom-color:#ccc;
+	color: #666;
+}
+.w100Per_bgFff_borBottom{
+	background: transparent;
+}
+.w100Per_bgFff_borBottom .tex_title_16Pix_222_borBottom{
+	border:0;
+}
+.online_exam_recommend_name h2{
+	float: left;
+}
+.online_exam_recommend_name p{
+	float: left;
+	font-size:14px;
+	margin-top:4px;
+	margin-left: 16px;
+}
+.online_exam_recommend_name p img{
+	width:auto;
+	height:12px;
+}
+/*浮层icon*/
+/*选择浮层*/
+.hidden{
+	display: none;
+}
+.float_cue{
+	position: absolute;
+	left:0;
+	top:0;
+	background:rgba(0,0,0,0.3);
+	width:100%;
+	height: 725px;
+	z-index: 100;
+}
+.float_cue_box{
+	position:absolute;
+	left:50%;
+	top:50%;
+	width:250px;
+	height:200px;
+	margin-left:-125px;
+	margin-top:-100px;
+	background: #fff;
+	border-radius:0.1rem;
+}
+.float_cue_box_icon{
+	float: right;
+	width:30px;
+	height:30px;
+	font-size: 30px;
+	line-height:30px;
+	text-align: center;
+	color: #c6c6c6;
+}
+.float_cue_box_pic{
+	width:36%;
+	margin-left:32%;
+	margin-top:30px;
+}
+.float_cue_box_text{
+	font-size: 12px;
+	line-height:24px;
+	margin: 10px auto;
+	width:100%;
+	text-align: center;
+	color: #959595;
+}
+.float_cue_box_text span{
+	color:#42a1e1;
+}
+/*视频标志图标*/
+.online_exam_recommend_list li .online_exam_recommend_img_i{
+	width:17px;
+	height:20px;
+	float: left;
+	position: absolute;
+	left:67px;
+	top:44px;
+}
+/*点击层*/
+.float_cen{
+	background:transparent;
+}
+/*无资源的占位符*/
+.recommend_del{
+	text-align: center;
+	height:85px;
+	line-height: 85px;
+	color: #999;
+	margin-top: 60px;
+}

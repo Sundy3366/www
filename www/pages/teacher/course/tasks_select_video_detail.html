@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title>爱学</title>
+		<link rel="stylesheet" type="text/css" href="../../../css/common/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/teacher/course.css" />
+		<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/courses.js" ></script>
+		<script type="text/javascript" >
+			$(function(){
+				getVideoInfo();
+			});
+		</script>
+	</head>
+
+	<body class="bodyBg-fff">
+		<!--彩色背景调用 bodyBg-f2f6f9-->
+		<header class="titleBarHeader_opacity_000" style="z-index: 2;">
+			<span class="returnBackSpan" onclick="javascript:goBackNow(-1,false);"></span>
+		</header>
+		<article class="video_detail_con">
+			<div class="video_detail_con_bg">
+				<div class="video_con_box">
+					<div class="video_con">
+						<video name="video" controls="controls" style="width: 100%; height: auto;" ></video>
+					</div>
+					<p name="videoTitle"></p>
+				</div>
+			</div>
+			<div class="btn_box">
+				<a href="javascript:;" onclick="gotoTaskVidePublish()">下一步</a>
+			</div>
+		</article>
+	</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title>爱学</title>
+		<link rel="stylesheet" type="text/css" href="../../../css/common/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/teacher/course.css" />
+		<script type="text/javascript" src="../../../js/common/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="../../../js/common/common.js" ></script>
+		<script type="text/javascript" src="../../../js/teacher/courses.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				initRecommendedInfo();
+			});
+		</script>
+	</head>
+	<body class="bodyBg-fff">
+		<!--
+			彩色背景调用 bodyBg-f2f6f9
+			白色背景调用 bodyBg-fff
+		-->
+		<header class="titleBarHeader">
+			<span class="returnBackSpan" onclick="javascript:history.back();"></span>
+			<span class="title">
+				<div class="f0">
+					<span class="f36_2">1/2</span>
+				</div>
+			</span>
+			<span class="right f0 minWidth66">
+				<span class="headerOkBtn" onclick="gotoCreateLessonNext()">下一步</span>
+			</span>
+		</header>
+		<article class="selected_textbooks">
+			<section class="establish">
+				<p>课程：
+					<input type="text" id="lessonName" value="" placeholder="输入课程名称"autofocus />
+				</p>
+			</section>	
+			<section class="establish_recommend">
+				<h3>共享课为您推荐，可直接使用</h3>
+				<ul class="recommend_list">
+					<!--
+					<li>语文复习语文复习语文复习语文复习语文复习</li><br />
+					<li>语文复习复习语文复习</li><br />
+					<li>语文复习语文复习语文复语文复习</li>
+					-->
+				</ul>
+			</section>
+		</article>
+	</body>
+
+</html>

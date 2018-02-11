@@ -1,0 +1,405 @@
+/*  班级通知 */
+.class_notice{
+	height: 100%;
+	width: 100%;
+	padding: 2px 4% 0;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.class_notice_list{
+	width: 100%;
+	overflow: hidden;
+}
+.class_notice_list time{
+	display: block;
+	font-size: 13px;
+	color: #999;
+	padding: 15px 0;
+	text-align: center;
+}
+.class_notice_list .con{
+	position: relative;
+	padding: 18px 13px 48px;
+	background: #fff;
+}
+.class_notice_list .con p{
+	padding-bottom: 17px;
+}
+.class_notice_list .con span{
+	position: absolute;
+	right: 13px;
+	bottom: 18px;
+	display: block;
+	width: 13px;
+	height: 16px;
+	background: url(../../img/classNotice/content_btn_delete_notification@2x.png) no-repeat;
+	background-size: 100%;
+}
+.class_notice_list .con div{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    display: block;
+    width: 45px;
+    height: 45px;
+}
+.class_notice_list .con .img{
+	width: 100%;
+	height: 113px;
+}
+.class_notice_list .con .msg_box{
+	position: absolute;
+	right: 13px;
+	bottom: 18px;
+	font-style: normal;
+	font-size: 13px;
+	color: #999;
+}
+.class_notice_list .con em{
+	position: absolute;
+	right: 13px;
+	bottom: 18px;
+	font-style: normal;
+	font-size: 13px;
+	color: #999;
+}
+/*  通知详情  */
+.class_notice_detail{
+	width: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.class_notice_detail  .detaile_con{
+	position: relative;
+	padding: 0 4%;
+	padding-bottom: 28px;
+	background: #fff;
+	margin-bottom: 10px;
+}
+.class_notice_detail  .detaile_con h2{
+	padding: 12px 0;
+	width: 100%;
+	font-size: 17px;
+	color: #222;
+	line-height: 29px;
+	font-weight: normal;
+}
+.class_notice_detail  .detaile_con em{
+	display: block;
+	padding-bottom: 15px;
+	font-style: normal;
+	font-size: 13px;
+	color: #999;
+}
+.class_notice_detail .detaile_con p{
+	padding: 15px 0;
+	font-size: 18px;
+	color: #222;
+	line-height: 29px;
+}
+.class_notice_detail .bulletin_con p{ color: #666;}
+.class_notice_detail .detaile_con img{
+	width: 100%;
+	height: auto;
+}
+.class_notice_detail .detaile_con span{
+	position: absolute;
+	right: 4%;
+	font-size: 12px;
+	color: #666;
+	padding-left: 22px;
+	bottom: 26px;
+	display: block;
+	height: 13px;
+	background:url(../../img/classNotice/content_btn_notification_reply@2x.png) no-repeat;
+	background-size: auto 100%;
+}
+.class_notice_detail .comments_con{
+	padding: 0 4%;
+	overflow: hidden;
+	background: #fff;
+}
+.class_notice_detail .comments_con h3{
+	padding: 13px 0;
+	font-size: 14px;
+	color: #222;
+	font-weight: normal;
+	border-bottom: 1px solid #DCDCDC;
+}
+/*
+.class_notice_detail .comments_con ul,.class_notice_detail .comments_con ul li dl{
+	width: 100%;
+	overflow: hidden;
+}
+.class_notice_detail .comments_con ul li{
+	position: relative;
+	padding: 10px 0;
+	border-bottom: 1px solid #DCDCDC;
+}
+.class_notice_detail .comments_con ul li dt{
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 40px;
+	height: 40px;
+}
+.class_notice_detail .comments_con ul li dt img{
+	width: 40px;
+	height: 40px;
+	border-radius: 80px;
+}
+.class_notice_detail .comments_con ul li dd{
+	padding-left: 53px;
+	overflow: hidden;
+}
+.class_notice_detail .comments_con ul li dd h4{
+	font-size: 14px;
+	font-weight: normal;
+	color: #666;
+}
+.class_notice_detail .comments_con ul li dd time{
+	display: block;
+	font-size: 12px;
+	color: #999;
+	padding-bottom: 4px;
+}
+.class_notice_detail .comments_con ul li dd p{
+	font-size: 16px;
+	color: #222;
+	line-height: 22px;
+}
+.class_notice_detail .comments_con ul li dd p a:link,.class_notice_detail .comments_con ul li dd p a:visited{
+	color: #3c61a9;
+	font-size: 16px;
+	text-decoration: none;
+}
+*/
+
+.class_notice_detail .comments_con .divUl,.class_notice_detail .comments_con dl{
+	width: 100%;
+	overflow: hidden;
+}
+.class_notice_detail .comments_con .divUl .divLi{
+	position: relative;
+	padding: 10px 0;
+	border-bottom: 1px solid #DCDCDC;
+}
+.class_notice_detail .comments_con dt{
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 40px;
+	height: 40px;
+}
+.class_notice_detail .comments_con dt img{
+	width: 40px;
+	height: 40px;
+	border-radius: 80px;
+    border: 2px solid #FFFFFF;
+}
+.class_notice_detail .comments_con dt img.parent{
+	border-color: #52C330;
+}
+.class_notice_detail .comments_con dt img.teacher{
+	border-color: #FF8200;
+}
+.class_notice_detail .comments_con  dd{
+	padding-left: 53px;
+	overflow: hidden;
+}
+.class_notice_detail .comments_con dd h4{
+	font-size: 14px;
+	font-weight: normal;
+	color: #666;
+}
+.class_notice_detail .comments_con dd time{
+	display: block;
+	font-size: 12px;
+	color: #999;
+	padding-bottom: 4px;
+}
+.class_notice_detail .comments_con dd p{
+	font-size: 16px;
+	color: #222;
+	line-height: 22px;
+}
+.class_notice_detail .comments_con dd p a:link,.class_notice_detail .comments_con dd p a:visited{
+	color: #3c61a9;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+/*  发布通知给  */
+.public_notice_permissions,.public_notice_range{
+	width: 100%;
+	padding: 17px 4% 33px;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+	overflow: hidden;
+	background: #fff;
+	border-bottom: 1px solid #DCDCDC;
+}
+.public_notice_permissions .permissions_set{
+	width: 100%;
+	height: 41px;
+}
+.public_notice_permissions .permissions_set a:link,.public_notice_permissions .permissions_set a:visited{
+	float: left;
+	color: #222;
+	display: block;
+	width: 50%;
+	height: 41px;
+	line-height: 41px;
+	text-align: center;
+	box-sizing: border-box;
+	text-decoration: none;
+	border: 1px solid #DCDCDC;
+}
+.public_notice_permissions .permissions_set a:first-child{ border-right: none;}
+.public_notice_permissions .permissions_set a.hig:link,.public_notice_permissions .permissions_set a.hig:visited{
+	border: 1px solid #4aacee;
+	background:url(../../img/teacher/course/content_subject_has_been_selected02@2x.png) no-repeat right bottom;
+	background-size: auto 72%;
+}
+.public_notice_permissions .radio{
+	width: 100%;
+	height: 21px;
+}
+.public_notice_permissions .radio span,.public_notice_permissions .radio span{
+	float: left;
+	display: block;
+	width: 21px;
+	height: 21px;
+	box-sizing: border-box;
+	border: 1px solid #cccccc;
+	border-radius: 50px;
+	border: none;
+	background:url(../../img/teacher/grade/content_choose_right@2x.png)  no-repeat;
+	background-size: 100%;
+}
+.public_notice_permissions .radio span.hig,.public_notice_permissions .radio  span.hig{
+	border: none;
+	background:url(../../img/teacher/grade/content_btn_selected@2x.png)  no-repeat;
+	background-size: 100%;
+}
+.public_notice_permissions .radio p{
+	height: 21px;
+	line-height: 21px;
+	font-size: 16px;
+	color: #666;
+	padding-left: 30px;
+}
+.public_notice_range h3{
+	font-size: 17px;
+	color: #666;
+	font-weight: normal;
+	padding-bottom: 20px;
+}
+.public_notice_range .class_select a:link,.public_notice_range .class_select a:visited{
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 16px;
+	color: #222;
+	border: 1px solid #B3B3B3;
+	margin-bottom: 10px;
+	text-decoration: none;
+}
+.public_notice_range .class_select a.hig{
+	border: 1px solid #4aacee;
+	background: url(../../img/teacher/course/content_subject_has_been_selected02@2x.png)no-repeat right bottom;
+	background-size: auto 72%;
+}
+/*  新建通知  */
+.new_notice_title{
+	width: 100%;
+	padding: 0 4%;
+	height: 55px;
+	box-sizing: border-box;
+	border-bottom:1px solid #DCDCDC;
+}
+.new_notice_title input{
+	width: 100%;
+	/*height: 55px;*/
+	/*line-height: 55px;*/
+	box-sizing: border-box;
+	font-size: 14px;
+	color: black;
+	background: none;
+	outline: none;
+	border: none transparent;
+	height: 20px;
+    line-height: 20px;
+    margin-top: 15.5px;
+}
+.new_notice_con{
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	padding: 10px 4%;
+	min-height: 300px;
+	max-height: 300px;
+}
+.new_notice_con textarea{
+	width: 100%;
+	max-width: 100%;
+	min-height: 300px;
+	max-height: 300px;	
+	background: none;
+	font-size: 14px;
+	color: black;
+	line-height: 24px;
+	outline: none;
+	border: none transparent;
+}
+.new_notice_preview_img{
+	width: 76px;
+	height: 76px;
+	margin: 10px 0 20px;
+}
+.new_notice_camera{
+	position: fixed;
+	bottom: 15px;
+	left: 4%;
+	display: block;
+	width:25px ;
+	height: 21px;
+	background:url(../../img/classNotice/content_img_task_camera@2x.png) no-repeat;
+	background-size: 100%;
+}
+.pr8Pix{ padding-right: 8px;}
+.tex_ellipsis{
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
+.w_30Pix{ width: 70px;}
+.publisher_i{
+	float: left; 
+	font-style:normal;
+}
+.fl{ float: left;}
+#activityContent{
+	font-size: 15px;
+	color: #666666;
+	padding: 0;
+}
+#activityTitle{
+	padding: 15px 0 0 0;
+}
+.cnd_color{
+	color: #3c61a9;
+}
+.bl_img_div{
+	text-align: center;
+	display: none;
+}
+.bl_img{
+	width: 70%;
+	margin-top: 120px;
+}

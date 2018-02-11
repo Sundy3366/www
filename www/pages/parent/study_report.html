@@ -1,0 +1,139 @@
+<!--
+	作者：wdjx_123@sina.cn
+	时间：2016-04-05
+	描述：校内学习/课外班 , 周报/月报
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<title>爱学</title>
+		<link rel="stylesheet" href="../../css/common/public.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common/idangerous.swiper.css" />
+		<link rel="stylesheet" href="../../css/parent/parent.css"/>
+		<script type="text/javascript" >
+			var webRoot = document.location.href.split("pages/parent/study_report.html")[0];
+		</script>
+	</head>
+	<body class="f36_2">
+		<header class="titleBarHeader" style="display: block;">
+			<span class="returnBackSpan" onclick="javascript:goBackNow()"></span>
+			<span class="title">
+				<span class="f0">
+					<div class="f0">
+						<!--
+							选中时,span上添加hig,同时在subRadius上添加hig
+						-->
+						<div class="report_tab_container">
+							<div class="subRadius left hig"></div>
+							<div name="reportTab" class="main">
+								<span idx="0" data="1" class="hig"  fn="initStudyReport(1)">周报</span>
+								<span idx="1" data="2"  fn="initStudyReport(2)">月报</span>
+							</div>
+							<div class="subRadius right"></div>
+						</div>
+					</div>
+				</span>
+			</span>
+		</header>
+		<div>
+			<article class="pieSlideArt" style="display: none;">
+				<div class="swiper-container">
+					<div class="swiper-wrapper" id="pieSliderList">
+					</div>
+				</div>
+			</article>
+		</div>
+		<article id="noDataZW" style="display: none;margin-top: 50%;">
+			<div class="study_report_zwt1"></div>
+		</article>
+		<article id="noStudyZW" style="display: none;height:calc(90% - 179px);margin-top: 10%;">
+			<div class="study_report_zwt2" style="height: 100%;"></div>
+		</article>
+		<article id="errorZW" style="display: none;height:calc(90% - 179px);margin-top: 10%;">
+			<div class="study_report_err" style="height: 100%;"></div>
+		</article>
+		<div id="studyReportBox" style="display: none;height:calc(100% - 179px);-webkit-overflow-scrolling: touch;overflow-y: auto;">
+			<!--
+			<div >
+				<article class="subjectTitle">
+					
+				</article>
+				<article class="pieChartArt">
+					<div class="report_sub_title">
+						任务统计
+					</div>
+					<div id="pieChartDiv" style="height:300px;width: 100%;">
+					</div>
+					<div class="legend_div">
+						<ul>
+							<li><span class="bgcFA8874"></span>学资源</li>
+							<li><span class="bgc73D4FA"></span>一般任务</li>
+							<li><span class="bgcF9A574"></span>直播课</li>
+							<li><span class="bgc74ABF9"></span>做题</li>
+							<li><span class="bgcF3D357"></span>微课程</li>
+							<li><span class="bgcAFB0FB"></span>测验</li>
+							<li><span class="bgc5FD86A"></span>讨论</li>
+							<li><span class="bgcAC76F8"></span>自测</li>
+						</ul>
+					</div>
+				</article>
+				<article class="lineChartArt">
+					<div class="report_sub_title">
+						试卷统计
+					</div>
+					<div id="lineChartDiv" style="height:250px;width: 100%;position: relative;">
+					</div>
+				</article>
+				<article class="shitiTongjiArt">
+					<div class="report_sub_title">
+						试题统计
+					</div>
+					<div class="tongji_container">
+						<div id="kgtDiv">
+							<div class="subtitle">客观题</div>
+							<div class="tongji_block">
+								<div>总题数<span id="kgtTotalBlueBar" class="blueBar" style="width: 1px;"></span><span id="kgtTotalSpan">0</span>道</div>
+								<div>已完成<span id="kgtHadCompleteBlueBar" class="blueBar75" style="width: 1px;"></span><span id="kgtHadCompleteSpan">0</span>道</div>
+							</div>
+							<div class="zql">正确率 <span id="kgtZQL">0%</span></div>
+						</div>
+						<div id="zgtDiv">
+							<div class="subtitle">主观题</div>
+							<div class="tongji_block">
+								<div>总题数<span id="zgtTotalBlueBar" class="blueBar" style="width: 1px;"></span> <span id="zgtTotalSpan">0</span>道</div>
+								<div>已完成<span id="zgtHadCompleteBlueBar" class="blueBar75" style="width: 1px;"></span> <span id="zgtHadCompleteSpan">0</span>道</div>
+								<div>已批改<span id="zgtHadHanleBlueBar" class="blueBar60" style="width: 1px;"></span> <span id="zgtHadHandleSpan">0</span>道</div>
+							</div>
+							<div class="zql">得分率 <span id="zgtZQL">0%</span></div>
+						</div>
+					</div>
+				</article>
+				<div class="tongji_container" style="clear: both;">
+					<hr style="margin: 0 30px;border: 0.5px solid #DCDCDC;border-top: 1px solid #DCDCDC;border-bottom: 0;">
+					<div class="zonghe">
+						<div class="content">
+							累计积分 <span id="totalScoreSpan">0</span>,
+							排名 <span id="rankSpan">0/0</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			 -->
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/common/jquery-1.9.1.min.js" ></script>
+	<script type="text/javascript" src="../../js/common/common.js" ></script>
+	<script type="text/javascript" src="../../js/common/echarts/echarts.js"></script>
+	<script type="text/javascript" src="../../js/common/echarts/echartsConfig.js"></script>
+	<script type="text/javascript" src="../../js/common/idangerous.swiper.min.js"></script> 
+	<script type="text/javascript" src="../../js/parent/parent_report.js" ></script>
+	<script>
+		var mySwiper;
+		$(function(){
+			initStudyReport(1);
+			changeTabClickListen();
+		});
+	</script>
+</html>
