@@ -296,6 +296,8 @@ html,body{
 .pt30Pix{ padding-top: 30px;}
 .pt17Pix{ padding-top: 17px;}
 .pt18Pix{ padding-top: 18px;}
+.pt24Pix{ padding-top: 24px;}
+.pb22Pix{ padding-bottom: 22px;}
 .pb17Pix{ padding-bottom: 17px;}
 .pb18Pix{ padding-bottom: 18px;}
 .mt8Pix{ margin-top: 8px;}
@@ -424,7 +426,7 @@ html,body{
 /*  底板     白色背景＋＃dcdcdc底部描边*/
 .w100Per_bgFff_borBottom{
 	width: 100%;
-	padding: 24px;
+	padding: 0 24px 24px 24px;
 	/*border-bottom: 1px solid #DCDCDC;*/
 	overflow: hidden;
 	background: #fff;

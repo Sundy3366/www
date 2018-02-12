@@ -1,22 +1,14 @@
 /* 网校 首页*/
 .online_school_banner{
-	/*width: 100%;*/
-	/*height: 288px;*/
-	padding: 24px;
+	padding: 24px 24px 0 24px;
 }
 .online_school_banner img{
     width: 100%;
 	height: 240px;
 	box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2)
-    /*padding-right:24px;*/
-    /*padding-left:24px;*/
-    /*padding-top:24px;*/
 }
 .nine_squares_selection{
-	/*height: 200px;*/
 	background: #fff;
-    /*overflow: scroll;*/
-/*    overflow: hidden;*/
     margin-left:24px;
     margin-right:24px;
     padding: 24px 16px 24px 16px;
@@ -26,23 +18,18 @@
 	position: relative;
 	width: 100%;
 	display: flex;
-    /*background:#00ffff;*/
 	justify-content: space-between;
-	/*    float:left;*/
 }
 .nine_squares_selection li{
-	/*	position: absolute;*/
 	box-sizing: border-box;
 	text-align: center;
-    /*background: #ff00ff;*/
 	float:left;
-	width:224px;/*20%*/
 }
 
 .nine_squares_selection li span{
 	display: inline-block;
-	width: 100%;
-	height: 112px;
+	width: 3.04rem;/*20%*/
+	height: 1.52rem;
 	box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2)
 }
 .nine_squares_selection li span.live_lesson{
@@ -66,8 +53,8 @@
 	background-size: 100%;
 }
 .nine_squares_selection li h3{
-	line-height: 40px;
 	font-size: 18px;
+	margin-top: -10px;
 	color: #222;
 	font-weight: normal;
 }
@@ -146,7 +133,6 @@
 .online_exam_recommend_list{
 	clear: both;
 	width: 100%;
-	/*overflow: hidden;*/
 	background: #fff;
 }
 .recommend_nullImg{
@@ -157,58 +143,60 @@
 	top: 60px;
 }
 .online_exam_recommend_list li{
+	box-sizing: border-box;
 	position: relative;
-	width: 45%;
-	height: 112px;
-	padding:24px 2% 24px 2% ;
-	/*border-bottom: 1px solid #DCDCDC;*/
-	margin-bottom: 10px;
+	width: 49%;
+	height: 160px;
+	padding:24px 16px 24px 16px ;
+	margin-bottom: 16px;
 	background:#fff;
 	float: left;
 	box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2)
-	/*overflow: hidden;*/
 }
-.online_exam_recommend_list li:nth-child(2n+1){
+.online_exam_recommend_list li:nth-child(2n){
 	float: right;
+	padding-right: 0;
 }
 .online_exam_recommend_list li:last-child{ border-bottom: none;}
 .online_exam_recommend_list li img{
 	float: left;
 	display: block;
-	width: 116px;
-	height: 72px;
+	width: 184px;
+	height: 112px;
+	box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2)
 }
 .online_exam_recommend_list li .con{
-	width: 95%;
-	padding-left: 126px;
+	width: 93%;
+	padding-left: 200px;
 	box-sizing: border-box;
 
 }
 .online_exam_recommend_list li .con .con_text{
-	height: 37px;
-	font-size: 13px;
-	color: #444;
-	margin-top: 5px;
+	height: 50px;
+	font-size: 18px;
+	color: #333;
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 2;
 	overflow: hidden;
 }
 .online_exam_recommend_list li .con .con_btn{
-	overflow: hidden;
-	margin-top: 7px;
+	/*overflow: hidden;*/
+	margin-top: 36px;
 }
 .online_exam_recommend_list li .con span{
-	width:45px;
-	height:18px;
-	font-size: 10px;
-	color: #888;
-	line-height: 18px;
-	border:1px solid #ccc;
+	box-sizing: border-box;
+	width:48px;
+	height:32px;
+	font-size: 16px;
+	color: #999;
+	border:1px solid #999;
 	border-radius: 3px;
 	display: inline-block;
 	text-align: center;
 	margin-right: 10px;
+	text-align: center;
+	line-height: 32px;
 	float: left;
 }
 .online_exam_recommend_list li .con .con_btn_2{
@@ -216,14 +204,15 @@
 }
 .online_exam_recommend_list li .con .con_btn .con_btn_r{
 	width:auto;
-	height:18px;
-	font-size: 10px;
-	color: #888;
-	line-height: 18px;
+	height:32px;
+	font-size: 16px;
+	color: #999;
+	line-height: 32px;
 	border:0px solid #ccc;
 	display: inline-block;
 	float: right;
 	margin:0;
+	margin-right: -20px;
 }
 .tm_menu_red_tip{
 	top: 5px;
@@ -254,7 +243,7 @@
 .online_exam_recommend_list_pointer{
 	position: absolute;
 	right:0px;
-	top:0px;
+	top:20px;
 	height:36px;
 	width:40px;
 	z-index: 99;
@@ -267,6 +256,7 @@
 	height:auto;
 	width:16px;
 	padding:10px 15px 10px 10px;
+	box-shadow: none;
 	z-index: 100;
 }
 .online_exam_recommend_list_pointer_list{
@@ -297,16 +287,23 @@
 }
 .online_exam_recommend_name h2{
 	float: left;
+	color: #333;
+	font-size: 18px;
+}
+.changeBtn{
+	color: #999;
+	font-size: 16px;
 }
 .online_exam_recommend_name p{
 	float: left;
-	font-size:14px;
-	margin-top:4px;
+	font-size:16px;
 	margin-left: 16px;
 }
 .online_exam_recommend_name p img{
 	width:auto;
-	height:12px;
+	height:24px;
+	float: left;
+	margin-right: 8px;
 }
 /*浮层icon*/
 /*选择浮层*/
@@ -364,8 +361,8 @@
 	height:20px;
 	float: left;
 	position: absolute;
-	left:67px;
-	top:44px;
+	left:100px;
+	top:70px;
 }
 /*点击层*/
 .float_cen{

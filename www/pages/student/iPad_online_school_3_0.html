@@ -73,7 +73,7 @@
 				</div>-->
 			</section>
 			<!--  为你推荐	-->
-			<section class="bikanqingdan w100Per_bgFff_borBottom">
+			<section class="bikanqingdan  w100Per_bgFff_borBottom">
 				<div class="pl4Per online_exam_recommend_name pr4Per">
 					<h2 class="tex_title_16Pix_222_borBottom pb17Pix pt17Pix">必看清单</h2>
 					<p class="tex_title_16Pix_222_borBottom pb17Pix pt17Pix" id="break_info">
@@ -83,24 +83,144 @@
 				</div>
 
 				<ul id="recommend" class="online_exam_recommend_list">
+					<li class="recommend_li" data-pointName="'+point+'" data-url="'+node[i].pageUrl+'" data-rid="'+node[i].rid+'" data-pointId="'+node[i].pointId+'" data-type="'+node[i].type+'" data-videoId="'+node[i].videoId+'">
 
-					<li class="">
 						<div class="online_exam_recommend_list_pointer">
-							<img class="online_exam_recommend_list_pointer_img" src="../../img/student/student_online_school_pointer.png"/>
-							<div class="online_exam_recommend_list_pointer_list">
-								<p class="online_exam_recommend_list_pointer_list_p">还没学到</p>
-								<p class="online_exam_recommend_list_pointer_list_p">已经学过</p>
-								<p class="online_exam_recommend_list_pointer_list_p">不感兴趣</p>
+
+							<img class="online_exam_recommend_list_pointer_img" src="../../img/student/student_online_school_pointer.png" data-videoId="'+node[i].videoId+'"/>
+
+							<div class="online_exam_recommend_list_pointer_list" data-statuds="0">
+
+								<p class="online_exam_recommend_list_pointer_list_p" data-choose="1" onclick="feedback(this)">还没学到</p>
+
+								<p class="online_exam_recommend_list_pointer_list_p" data-choose="2" onclick="feedback(this)">已经学过</p>
+
+								<p class="online_exam_recommend_list_pointer_list_p" data-choose="3" onclick="feedback(this)">不感兴趣</p>
+
 							</div>
+
 						</div>
-						<img src="../../img/student/student_online_school_banner@2x.png"/>
-						<div class="con">
+
+						<img class="online_exam_recommend_img"  src="../../img/student/zixue_tiantiandanci@2x.png"/>
+
+						<div class="con recommend_li_con">
+
 							<p class="con_text">点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题</p>
+
 							<p class="con_btn"><span class="con_btn_1">数学</span><span class="con_btn_2">文档</span><span class="con_btn_r">120人练习</span></p>
+
 						</div>
+
 						<img class="online_exam_recommend_img_i" src="../../img/student/student_online_school_open.png">
+
 					</li>
-					<li>
+
+					<li class="recommend_li" data-pointName="'+point+'" data-url="'+node[i].pageUrl+'" data-rid="'+node[i].rid+'" data-pointId="'+node[i].pointId+'" data-type="'+node[i].type+'" data-videoId="'+node[i].videoId+'">
+
+						<div class="online_exam_recommend_list_pointer">
+
+							<img class="online_exam_recommend_list_pointer_img" src="../../img/student/student_online_school_pointer.png" data-videoId="'+node[i].videoId+'"/>
+
+							<div class="online_exam_recommend_list_pointer_list hidden" data-statuds="0">
+
+								<p class="online_exam_recommend_list_pointer_list_p" data-choose="1" onclick="feedback(this)">还没学到</p>
+
+								<p class="online_exam_recommend_list_pointer_list_p" data-choose="2" onclick="feedback(this)">已经学过</p>
+
+								<p class="online_exam_recommend_list_pointer_list_p" data-choose="3" onclick="feedback(this)">不感兴趣</p>
+
+							</div>
+
+						</div>
+
+						<img class="online_exam_recommend_img"  src="../../img/student/zixue_tiantiandanci@2x.png"/>
+
+						<div class="con recommend_li_con">
+
+							<p class="con_text">点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题</p>
+
+							<p class="con_btn"><span class="con_btn_1">数学</span><span class="con_btn_2">文档</span><span class="con_btn_r">120人练习</span></p>
+
+						</div>
+
+					</li>
+
+					<li class="recommend_li" data-pointName="'+point+'" data-url="'+node[i].pageUrl+'" data-rid="'+node[i].rid+'" data-pointId="'+node[i].pointId+'" data-type="'+node[i].type+'" data-videoId="'+node[i].videoId+'">
+
+						<div class="online_exam_recommend_list_pointer">
+
+							<img class="online_exam_recommend_list_pointer_img" src="../../img/student/student_online_school_pointer.png" data-videoId="'+node[i].videoId+'"/>
+
+							<div class="online_exam_recommend_list_pointer_list hidden" data-statuds="0">
+
+								<p class="online_exam_recommend_list_pointer_list_p" data-choose="1" onclick="feedback(this)">还没学到</p>
+
+								<p class="online_exam_recommend_list_pointer_list_p" data-choose="2" onclick="feedback(this)">已经学过</p>
+
+								<p class="online_exam_recommend_list_pointer_list_p" data-choose="3" onclick="feedback(this)">不感兴趣</p>
+
+							</div>
+
+						</div>
+
+						<img class="online_exam_recommend_img"  src="../../img/student/zixue_tiantiandanci@2x.png"/>
+
+						<div class="con recommend_li_con">
+
+							<p class="con_text">点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题</p>
+
+							<p class="con_btn"><span class="con_btn_1">数学</span><span class="con_btn_2">文档</span><span class="con_btn_r">120人练习</span></p>
+
+						</div>
+
+					</li>
+
+					<li class="recommend_li" data-pointName="'+point+'" data-url="'+node[i].pageUrl+'" data-rid="'+node[i].rid+'" data-pointId="'+node[i].pointId+'" data-type="'+node[i].type+'" data-videoId="'+node[i].videoId+'">
+
+						<div class="online_exam_recommend_list_pointer">
+
+							<img class="online_exam_recommend_list_pointer_img" src="../../img/student/student_online_school_pointer.png" data-videoId="'+node[i].videoId+'"/>
+
+							<div class="online_exam_recommend_list_pointer_list " data-statuds="0">
+
+								<p class="online_exam_recommend_list_pointer_list_p" data-choose="1" onclick="feedback(this)">还没学到</p>
+
+								<p class="online_exam_recommend_list_pointer_list_p" data-choose="2" onclick="feedback(this)">已经学过</p>
+
+								<p class="online_exam_recommend_list_pointer_list_p" data-choose="3" onclick="feedback(this)">不感兴趣</p>
+
+							</div>
+
+						</div>
+
+						<img class="online_exam_recommend_img"  src="../../img/student/zixue_tiantiandanci@2x.png"/>
+
+						<div class="con recommend_li_con">
+
+							<p class="con_text">点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题</p>
+
+							<p class="con_btn"><span class="con_btn_1">数学</span><span class="con_btn_2">文档</span><span class="con_btn_r">120人练习</span></p>
+
+						</div>
+
+					</li>
+					<!--<li class="">-->
+					<!--<div class="online_exam_recommend_list_pointer">-->
+					<!--<img class="online_exam_recommend_list_pointer_img" src="../../img/student/student_online_school_pointer.png"/>-->
+					<!--<div class="online_exam_recommend_list_pointer_list">-->
+					<!--<p class="online_exam_recommend_list_pointer_list_p">还没学到</p>-->
+					<!--<p class="online_exam_recommend_list_pointer_list_p">已经学过</p>-->
+					<!--<p class="online_exam_recommend_list_pointer_list_p">不感兴趣</p>-->
+					<!--</div>-->
+					<!--</div>-->
+					<!--<img src="../../img/student/student_online_school_banner@2x.png"/>-->
+					<!--<div class="con">-->
+					<!--<p class="con_text">点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题</p>-->
+					<!--<p class="con_btn"><span class="con_btn_1">数学</span><span class="con_btn_2">文档</span><span class="con_btn_r">120人练习</span></p>-->
+					<!--</div>-->
+					<!--<img class="online_exam_recommend_img_i" src="../../img/student/student_online_school_open.png">-->
+					<!--</li>-->
+					<!--<li>
 						<div class="online_exam_recommend_list_pointer">
 							<img class="online_exam_recommend_list_pointer_img" src="../../img/student/student_online_school_pointer.png"/>
 							<div class="online_exam_recommend_list_pointer_list">
@@ -144,7 +264,7 @@
 							<p class="con_text">点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题点播课标题点播课程标题</p>
 							<p><span>数学</span><span>文档</span></p>
 						</div>
-					</li>
+					</li>-->
 				</ul>
 			</section>
 		</article>
@@ -168,16 +288,19 @@
 		<script type="text/javascript" src="../../js/student/online_school.js" ></script>
 		<script type="text/javascript" src="../../js/common/fastclick.js"></script>
 		<script>
-//            if(3<2){
-//                alert(1)
-////                $(".nine_squares_selection li").css("width","24%")
-//                $("#yuxiwangIcon").show();
-////                $(".nine_squares_selection li span").css("width","100%")
-////                $(".nine_squares_selection li span").css("height","112px")
-//                //符合要求的展示个性化列表页
-//                $(".bikanqingdan").show();
-//                loadgetResource("0");
-//            }
+            window.onload = function(){
+                /*720代表设计师给的设计稿的宽度，你的设计稿是多少，就写多少;100代表换算比例，这里写100是
+                  为了以后好算,比如，你测量的一个宽度是100px,就可以写为1rem,以及1px=0.01rem等等*/
+                getRem(1024,100)
+            };
+            window.onresize = function(){
+                getRem(1024,100)
+            };
+            function getRem(pwidth,prem){
+                var html = document.getElementsByTagName("html")[0];
+                var oWidth = document.body.clientWidth || document.documentElement.clientWidth;
+                html.style.fontSize = oWidth/pwidth*prem + "px";
+            }
 			if(!isH5Only){
 						//获取传过来的参数
 						var strParam = getQueryStringFromUrl();
@@ -200,7 +323,7 @@
 							 */
 							if(gradeId && ((!isFiveFour && gradeId<7) || (isFiveFour && gradeId<8))){
                                 $("#yuxiwangIcon").show();
-                                $(".nine_squares_selection li span").css("width","224px")
+                                $(".nine_squares_selection li span").css({"width":"2.24rem","height":"1.12rem"})
                                 //符合要求的展示个性化列表页
                                 $(".bikanqingdan").show();
                                 loadgetResource("0");
